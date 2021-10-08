@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'dhbw-studienarbeit',
+    title: 'Nursing Home Volunteer',
     htmlAttrs: {
       lang: 'de',
     },
