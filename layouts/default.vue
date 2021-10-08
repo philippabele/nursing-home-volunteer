@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Application header</p>
+    <NavBar />
     <Nuxt />
   </div>
 </template>
