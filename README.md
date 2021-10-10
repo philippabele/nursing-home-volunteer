@@ -1,5 +1,15 @@
 # nursing-home-volunteer
 
+## About this project
+
+replace me with information about the use case of volunteering in nursing homes.
+
+replace me with information about the DHBW and its students who make this project possible.
+
+## How to contribute to this project
+
+replace me with information about how we work and how someone could support this project.
+
 ## Build Setup
 
 ```bash
