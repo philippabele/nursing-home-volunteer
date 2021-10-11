@@ -16,13 +16,15 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
-            <b-form-input
-              size="me"
-              class="mr-sm-2"
-              placeholder="Search"
-              type="search"
-            ></b-form-input>
-            <b-button size="me" type="submit">Search</b-button>
+            <div class="d-flex search">
+              <b-form-input
+                size="me"
+                class="mr-2"
+                placeholder="Search"
+                type="search"
+              ></b-form-input>
+              <b-button size="me" type="submit">Search</b-button>
+            </div>
           </b-nav-form>
         </b-navbar-nav>
       </b-collapse>
@@ -41,3 +43,10 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+form,
+form .search {
+  width: 100%;
+}
+</style>
