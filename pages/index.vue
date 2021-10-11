@@ -4,7 +4,11 @@
 
     <div class="container">
       <div class="row">
-        <div v-for="feature of features" :key="feature.id" class="col-lg-4">
+        <div
+          v-for="feature of features"
+          :key="feature.id"
+          class="col-lg-4 feature"
+        >
           <Feature
             :title="feature.title"
             :description="feature.description"
@@ -76,7 +80,7 @@ export default defineComponent({
         description:
           'Some representative placeholder content for the three columns of text below the carousel. This is the first column.',
         btn: { text: 'View details', to: '#' },
-        src: 'https://placekitten.com/300/300',
+        src: 'https://via.placeholder.com/140',
       },
       {
         id: 1,
@@ -84,7 +88,7 @@ export default defineComponent({
         description:
           'Another exciting bit of representative placeholder content. This time, we have moved on to the second column.',
         btn: { text: 'View details', to: '#' },
-        src: 'https://placekitten.com/300/300',
+        src: 'https://via.placeholder.com/140',
       },
       {
         id: 2,
@@ -92,14 +96,14 @@ export default defineComponent({
         description:
           'And lastly this, the third column of representative placeholder content.',
         btn: { text: 'View details', to: '#' },
-        src: 'https://placekitten.com/300/300',
+        src: 'https://via.placeholder.com/140',
       },
     ])
 
     const imageBlocks = ref<IImageBlock[]>([
       {
         id: 0,
-        src: 'https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q',
+        src: 'https://via.placeholder.com/500',
         title: 'First featurette heading.',
         titleMuted: 'It’ll blow your mind',
         description:
@@ -107,7 +111,7 @@ export default defineComponent({
       },
       {
         id: 1,
-        src: 'https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q',
+        src: 'https://via.placeholder.com/500',
         title: 'Oh yeah, it’s that good.',
         titleMuted: 'See for yourself',
         description:
@@ -115,7 +119,7 @@ export default defineComponent({
       },
       {
         id: 2,
-        src: 'https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q',
+        src: 'https://via.placeholder.com/500',
         title: 'And lastly, this one.',
         titleMuted: 'Checkmate.',
         description:
@@ -131,5 +135,9 @@ export default defineComponent({
 <style scoped>
 .carousel {
   margin-bottom: 4rem;
+}
+
+.feature {
+  margin-bottom: 1.5rem;
 }
 </style>
