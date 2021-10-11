@@ -13,14 +13,24 @@ export default defineComponent({
     const slides = ref<CarouselSlide[]>([
       {
         id: 0,
-        caption: 'Caption',
-        text: 'Lorem ipsum dolor sit amet.',
-        btn: { text: 'Click me', to: '/test' },
+        caption: 'Example headline.',
+        text: 'Some representative placeholder content for the first slide of the carousel.',
+        btn: { text: 'Sign up today', to: '#' },
+        align: 'left',
       },
       {
         id: 1,
-        caption: 'Caption 2',
-        text: 'Lorem ipsum dolor sit amet.',
+        caption: 'Another example headline.',
+        text: 'Some representative placeholder content for the second slide of the carousel..',
+        btn: { text: 'Learn more', to: '#' },
+        align: 'center',
+      },
+      {
+        id: 2,
+        caption: 'One more for good measure.',
+        text: 'Some representative placeholder content for the third slide of this carousel.',
+        btn: { text: 'Browse gallery', to: '#' },
+        align: 'right',
       },
     ])
 

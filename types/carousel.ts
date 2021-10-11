@@ -10,4 +10,5 @@ export interface CarouselSlide {
     /** If true, will use href instead of to attribute for navigating */
     external?: boolean
   }
+  align?: 'left' | 'center' | 'right'
 }
