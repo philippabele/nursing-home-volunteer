@@ -12,3 +12,11 @@ export interface IFeature {
   description: string
   btn?: IButton
 }
+
+export interface IImageBlock {
+  id: number
+  src: string
+  title: string
+  titleMuted?: string
+  description: string
+}

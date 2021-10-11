@@ -17,31 +17,18 @@
       </div>
 
       <Divider />
-      <ImageBlock
-        src="https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q"
-        title="First featurette heading."
-        title-muted="It’ll blow your mind."
-        description="Some great placeholder content for the first featurette here. Imagine some exciting prose here."
-      />
 
-      <Divider />
-      <ImageBlock
-        image-pos="left"
-        src="https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q"
-        title="Oh yeah, it’s that good."
-        title-muted="See for yourself."
-        description="Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place."
-      />
+      <section v-for="(block, index) of imageBlocks" :key="block.id">
+        <ImageBlock
+          :src="block.src"
+          :title="block.title"
+          :title-muted="block.titleMuted"
+          :description="block.description"
+          :image-pos="index % 2 === 1 ? 'left' : 'right'"
+        />
 
-      <Divider />
-      <ImageBlock
-        src="https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q"
-        title="And lastly, this one."
-        title-muted="Checkmate."
-        description="And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content."
-      />
-
-      <Divider />
+        <Divider />
+      </section>
     </div>
   </main>
 </template>
@@ -53,7 +40,7 @@ import ImageBlock from '../components/ImageBlock.vue'
 import Carousel from '~/components/Carousel.vue'
 import { ICarouselSlide } from '~/types/carousel'
 import Feature from '~/components/Feature.vue'
-import { IFeature } from '~/types/misc'
+import { IFeature, IImageBlock } from '~/types/misc'
 
 export default defineComponent({
   components: { Carousel, Feature, Divider, ImageBlock },
@@ -109,7 +96,34 @@ export default defineComponent({
       },
     ])
 
-    return { slides, features }
+    const imageBlocks = ref<IImageBlock[]>([
+      {
+        id: 0,
+        src: 'https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q',
+        title: 'First featurette heading.',
+        titleMuted: 'It’ll blow your mind',
+        description:
+          'Some great placeholder content for the first featurette here. Imagine some exciting prose here.',
+      },
+      {
+        id: 1,
+        src: 'https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q',
+        title: 'Oh yeah, it’s that good.',
+        titleMuted: 'See for yourself',
+        description:
+          'Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.',
+      },
+      {
+        id: 2,
+        src: 'https://i.picsum.photos/id/58/250/250.jpg?hmac=EMdoi0dVpeZGvjM5RmcN353dglpcptMMHirtjb88T9Q',
+        title: 'And lastly, this one.',
+        titleMuted: 'Checkmate.',
+        description:
+          'And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.',
+      },
+    ])
+
+    return { slides, features, imageBlocks }
   },
 })
 </script>
