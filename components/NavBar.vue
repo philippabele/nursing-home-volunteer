@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand>NavBar</b-navbar-brand>
 
@@ -32,7 +32,7 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <Carousel :slides="slides" class="carousel" />
 
     <div class="container">
@@ -43,7 +43,7 @@
 
       <Divider />
     </div>
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
