@@ -4,7 +4,7 @@
       :interval="interval"
       :controls="controls && slides.length > 1"
       :indicators="indicators && slides.length > 1"
-      background="#ababab"
+      background="#777777"
       :img-width="width"
       :img-height="height"
     >
