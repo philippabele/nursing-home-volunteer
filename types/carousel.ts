@@ -1,14 +1,11 @@
-export interface CarouselSlide {
+import { IButton } from './misc'
+
+export interface ICarouselSlide {
   id: number
   caption?: string
   text?: string
   imgSrc?: string
   imgAlt?: string
-  btn?: {
-    text: string
-    to: string
-    /** If true, will use href instead of to attribute for navigating */
-    external?: boolean
-  }
+  btn?: IButton
   align?: 'left' | 'center' | 'right'
 }

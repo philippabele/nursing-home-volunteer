@@ -40,12 +40,12 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { CarouselSlide } from '~/types/carousel'
+import { ICarouselSlide } from '~/types/carousel'
 
 export default defineComponent({
   props: {
     slides: {
-      type: Array as PropType<CarouselSlide[]>,
+      type: Array as PropType<ICarouselSlide[]>,
       required: true,
     },
     /** Interval between slides. The smallest supported sliding interval is 1000ms. Default: 0. */
