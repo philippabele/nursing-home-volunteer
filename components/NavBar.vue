@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
+  <header class="sticky-top">
+    <b-navbar toggleable="lg" type="dark" variant="dark" sticky>
       <b-navbar-brand>NavBar</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -24,11 +24,6 @@
             ></b-form-input>
             <b-button size="me" type="submit">Search</b-button>
           </b-nav-form>
-
-          <!-- <b-nav-item-dropdown text="Sprache" right>
-            <b-dropdown-item active href="#">DE</b-dropdown-item>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-          </b-nav-item-dropdown> -->
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
