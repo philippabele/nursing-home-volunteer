@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
+  <header class="sticky-top">
+    <b-navbar toggleable="lg" type="dark" variant="dark" sticky>
       <b-navbar-brand>NavBar</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -15,14 +15,21 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Sprache" right>
-            <b-dropdown-item active href="#">DE</b-dropdown-item>
-            <b-dropdown-item href="#">EN</b-dropdown-item>
-          </b-nav-item-dropdown>
+          <b-nav-form>
+            <div class="d-flex search">
+              <b-form-input
+                size="me"
+                class="mr-2"
+                placeholder="Search"
+                type="search"
+              ></b-form-input>
+              <b-button size="me" type="submit">Search</b-button>
+            </div>
+          </b-nav-form>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">
@@ -36,3 +43,10 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+form,
+form .search {
+  width: 100%;
+}
+</style>
