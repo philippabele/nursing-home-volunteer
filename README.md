@@ -10,6 +10,15 @@ replace me with information about the DHBW and its students who make this projec
 
 replace me with information about how we work and how someone could support this project.
 
+## Prerequisites
+
+Make sure to read the [Nuxt.js prerequisites](https://nuxtjs.org/docs/get-started/installation/#prerequisites).
+Especially make sure to use/install a compatible node version from the [node installation page](https://nodejs.org/en/download/). As described [here](https://nuxtjs.org/releases/) for nuxt version 2.15.0 the minimium required node version is 12.0.0. You can check your installed node version by running:
+
+```
+node -v
+```
+
 ## Build Setup
 
 ```bash
