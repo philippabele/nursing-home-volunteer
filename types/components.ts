@@ -47,3 +47,10 @@ export interface ITestimonial {
   position?: string
   location?: string
 }
+
+export interface ITeamMember {
+  id: number
+  avatar: string
+  name: string
+  description: string
+}

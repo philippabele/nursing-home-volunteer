@@ -73,7 +73,15 @@
       <h2>Our Team or Partners</h2>
       <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
 
-      <div class="mt-5">Team...</div>
+      <div class="mt-5 row">
+        <div v-for="m of teamMembers" :key="m.id" class="col-lg-3 mb-34">
+          <TeamMeber
+            :avatar="m.avatar"
+            :name="m.name"
+            :description="m.description"
+          />
+        </div>
+      </div>
     </section>
   </main>
 </template>
@@ -88,18 +96,24 @@ import {
 import Hero from '~/components/Hero.vue'
 import {} from '~/types/misc'
 import IconCard from '~/components/IconCard.vue'
-import { IIconCard, IButton, ITestimonial } from '~/types/components'
+import {
+  IIconCard,
+  IButton,
+  ITestimonial,
+  ITeamMember,
+} from '~/types/components'
 import Testimonial from '~/components/Testimonial.vue'
+import TeamMeber from '~/components/TeamMeber.vue'
 
 export default defineComponent({
-  components: { Hero, IconCard, Testimonial },
+  components: { Hero, IconCard, Testimonial, TeamMeber },
   setup() {
     const heroBtn: IButton = {
       to: '/',
       text: 'Click me',
     }
 
-    const iconCards: IIconCard[] = reactive<IIconCard[]>([
+    const iconCards = reactive<IIconCard[]>([
       {
         id: 0,
         icon: BIconBullseye,
@@ -123,7 +137,7 @@ export default defineComponent({
       },
     ])
 
-    const testimonials: ITestimonial[] = reactive<ITestimonial[]>([
+    const testimonials = reactive<ITestimonial[]>([
       {
         id: 0,
         quote: 'Lorem ipsum dolor sit amet',
@@ -142,7 +156,34 @@ export default defineComponent({
       },
     ])
 
-    return { heroBtn, iconCards, testimonials }
+    const teamMembers = reactive<ITeamMember[]>([
+      {
+        id: 0,
+        avatar: 'https://placekitten.com/300/300',
+        name: 'Team Member 1',
+        description: 'Lorem ipsum dolor sit',
+      },
+      {
+        id: 1,
+        avatar: 'https://placekitten.com/300/300',
+        name: 'Team Member 2',
+        description: 'Lorem ipsum dolor sit',
+      },
+      {
+        id: 2,
+        avatar: 'https://placekitten.com/300/300',
+        name: 'Team Member 3',
+        description: 'Lorem ipsum dolor sit',
+      },
+      {
+        id: 3,
+        avatar: 'https://placekitten.com/300/300',
+        name: 'Team Member 3',
+        description: 'Lorem ipsum dolor sit',
+      },
+    ])
+
+    return { heroBtn, iconCards, testimonials, teamMembers }
   },
 })
 </script>
