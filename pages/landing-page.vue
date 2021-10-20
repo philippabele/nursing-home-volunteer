@@ -37,7 +37,7 @@
     </section>
 
     <section class="py-6 text-center container">
-      <h2>Testimonials</h2>
+      <h3>Testimonials</h3>
       <p class="pt-2">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -72,7 +72,7 @@
     </section>
 
     <section class="py-6 text-center container">
-      <h2>Our Team or Partners</h2>
+      <h3>Our Team or Partners</h3>
       <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
 
       <div class="mt-5 row">
