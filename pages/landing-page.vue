@@ -7,7 +7,7 @@
       :btn="heroBtn"
     />
 
-    <section class="py-5 text-center container">
+    <section class="py-6 text-center container">
       <h2>Our Offering</h2>
       <p class="pt-2">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -17,7 +17,7 @@
     </section>
 
     <section class="bg-light">
-      <div class="py-5 text-center container">
+      <div class="py-6 text-center container">
         <h3>Benefits at a glance</h3>
         <p class="pt-2">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr
@@ -27,7 +27,7 @@
       </div>
     </section>
 
-    <section class="py-5 text-center container">
+    <section class="py-6 text-center container">
       <h2>Testimonials</h2>
       <p class="pt-2">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -39,7 +39,7 @@
     </section>
 
     <section class="bg-light">
-      <div class="py-5 text-center container">
+      <div class="py-6 text-center container">
         <h3>Our Solution or Process</h3>
         <p class="pt-2">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -50,7 +50,7 @@
       </div>
     </section>
 
-    <section class="py-5 text-center container">
+    <section class="py-6 text-center container">
       <h2>Our Team or Partners</h2>
       <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
 

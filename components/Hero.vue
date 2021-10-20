@@ -53,7 +53,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .hero {
   height: 100vh;
   width: 100%;
@@ -61,17 +61,19 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
-}
 
-.hero__overlay {
-  width: 100%;
-  height: 100%;
+  &__overlay {
+    width: 100%;
+    height: 100%;
 
-  /* overlay */
-  background: rgba(0, 0, 0, 0.4) 100%;
-}
+    /* overlay */
+    background: rgba(0, 0, 0, 0.4) 100%;
+  }
 
-.hero__content p {
-  font-size: 18px;
+  &__content {
+    p {
+      font-size: 18px;
+    }
+  }
 }
 </style>
