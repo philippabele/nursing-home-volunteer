@@ -148,17 +148,19 @@ export default defineComponent({
     const testimonials = reactive<ITestimonial[]>([
       {
         id: 0,
-        quote: 'Lorem ipsum dolor sit amet',
+        quote:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
         name: 'Max Mustermann',
-        avatar: 'https://placekitten.com/300/300',
+        avatar: require('~/assets/placeholder.jpg'),
         position: 'CEO of Company A',
         location: 'Berlin',
       },
       {
         id: 1,
-        quote: 'Lorem ipsum dolor sit amet',
+        quote:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
         name: 'Maxine Musterfrau',
-        avatar: 'https://placekitten.com/300/300',
+        avatar: require('~/assets/placeholder.jpg'),
         position: 'CEO of Company B',
         location: 'Hamburg',
       },
@@ -167,25 +169,25 @@ export default defineComponent({
     const teamMembers = reactive<ITeamMember[]>([
       {
         id: 0,
-        avatar: 'https://placekitten.com/300/300',
+        avatar: require('~/assets/placeholder.jpg'),
         name: 'Team Member 1',
         description: 'Lorem ipsum dolor sit',
       },
       {
         id: 1,
-        avatar: 'https://placekitten.com/300/300',
+        avatar: require('~/assets/placeholder.jpg'),
         name: 'Team Member 2',
         description: 'Lorem ipsum dolor sit',
       },
       {
         id: 2,
-        avatar: 'https://placekitten.com/300/300',
+        avatar: require('~/assets/placeholder.jpg'),
         name: 'Team Member 3',
         description: 'Lorem ipsum dolor sit',
       },
       {
         id: 3,
-        avatar: 'https://placekitten.com/300/300',
+        avatar: require('~/assets/placeholder.jpg'),
         name: 'Team Member 3',
         description: 'Lorem ipsum dolor sit',
       },
