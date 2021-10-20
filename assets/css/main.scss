@@ -1,11 +1,1 @@
-@import '~/node_modules/bootstrap/scss/functions';
-@import '~/node_modules/bootstrap/scss/variables';
-
-// add more spacing sizes on top of the default bootstrap ones
-// see: https://getbootstrap.com/docs/4.0/utilities/spacing/#notation and https://stackoverflow.com/a/62680501
-$spacers: (
-  // The rest of numbers you need to use...
-  6: ($spacer * 5)
-);
-
-@import '~/node_modules/bootstrap/scss/bootstrap';
+@import 'bootstrap';
