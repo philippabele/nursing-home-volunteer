@@ -55,7 +55,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .hero {
-  height: 100vh;
+  height: 650px;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
