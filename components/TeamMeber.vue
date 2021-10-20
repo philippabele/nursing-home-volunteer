@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <b-avatar class="mb-3" :src="avatar" size="100%" rounded></b-avatar>
+    <b-avatar class="mb-3 avatar" :src="avatar" size="100%" rounded></b-avatar>
     <p class="mb-0 font-weight-bolder">{{ name }}</p>
 
     <p class="m-0">{{ description }}</p>
@@ -28,4 +28,8 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.avatar {
+  max-width: 300px;
+}
+</style>

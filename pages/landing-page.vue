@@ -74,7 +74,11 @@
       <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
 
       <div class="mt-5 row">
-        <div v-for="m of teamMembers" :key="m.id" class="col-lg-3 mb-34">
+        <div
+          v-for="m of teamMembers"
+          :key="m.id"
+          class="col-lg-3 col-md-6 mb-4"
+        >
           <TeamMeber
             :avatar="m.avatar"
             :name="m.name"
