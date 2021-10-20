@@ -20,3 +20,9 @@ export interface IImageBlock {
   titleMuted?: string
   description: string
 }
+
+export interface INavItem {
+  title: string
+  to: string
+  disabled?: boolean
+}

@@ -7,10 +7,14 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/" :active="route.path === '/'"
-            >Startseite</b-nav-item
+          <b-nav-item
+            v-for="item of navItems"
+            :key="item.to"
+            :to="item.to"
+            :active="route.path === item.to"
           >
-          <b-nav-item href="https://google.de" disabled>Disabled</b-nav-item>
+            {{ item.title }}
+          </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -33,13 +37,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useRoute } from '@nuxtjs/composition-api'
+import { defineComponent, useRoute, ref } from '@nuxtjs/composition-api'
+import { INavItem } from '~/types/misc'
 
 export default defineComponent({
   setup() {
     const route = useRoute()
 
-    return { route }
+    const navItems = ref<INavItem[]>([
+      {
+        title: 'Startseite',
+        to: '/',
+      },
+      {
+        title: 'Landing page',
+        to: '/landing-page',
+      },
+    ])
+
+    return { route, navItems }
   },
 })
 </script>
