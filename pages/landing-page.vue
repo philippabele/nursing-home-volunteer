@@ -24,11 +24,7 @@
         </p>
 
         <div class="mt-5 row">
-          <div
-            v-for="card of iconCards"
-            :key="card.id"
-            class="col-lg-4 feature mb-4"
-          >
+          <div v-for="card of iconCards" :key="card.id" class="col-lg-4 mb-4">
             <IconCard
               :title="card.title"
               :icon="card.icon"
@@ -48,7 +44,17 @@
         voluptua.
       </p>
 
-      <div class="mt-5">Testimonials...</div>
+      <div class="mt-5 row">
+        <div v-for="t of testimonials" :key="t.id" class="col-lg-6 mb-4">
+          <Testimonial
+            :quote="t.quote"
+            :avatar="t.avatar"
+            :name="t.name"
+            :position="t.position"
+            :location="t.location"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="bg-light">
@@ -78,10 +84,11 @@ import { BIconAwardFill } from 'bootstrap-vue'
 import Hero from '~/components/Hero.vue'
 import {} from '~/types/misc'
 import IconCard from '~/components/IconCard.vue'
-import { IIconCard, IButton } from '~/types/components'
+import { IIconCard, IButton, ITestimonial } from '~/types/components'
+import Testimonial from '~/components/Testimonial.vue'
 
 export default defineComponent({
-  components: { Hero, IconCard },
+  components: { Hero, IconCard, Testimonial },
   setup() {
     const heroBtn: IButton = {
       to: '/',
@@ -112,7 +119,26 @@ export default defineComponent({
       },
     ])
 
-    return { heroBtn, iconCards }
+    const testimonials: ITestimonial[] = reactive<ITestimonial[]>([
+      {
+        id: 0,
+        quote: 'Lorem ipsum dolor sit amet',
+        name: 'Max Mustermann',
+        avatar: 'https://placekitten.com/300/300',
+        position: 'CEO of Company A',
+        location: 'Berlin',
+      },
+      {
+        id: 1,
+        quote: 'Lorem ipsum dolor sit amet',
+        name: 'Maxine Musterfrau',
+        avatar: 'https://placekitten.com/300/300',
+        position: 'CEO of Company B',
+        location: 'Hamburg',
+      },
+    ])
+
+    return { heroBtn, iconCards, testimonials }
   },
 })
 </script>

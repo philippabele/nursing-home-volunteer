@@ -38,3 +38,12 @@ export interface IImageBlock {
   titleMuted?: string
   description: string
 }
+
+export interface ITestimonial {
+  id: number
+  quote: string
+  name: string
+  avatar?: string
+  position?: string
+  location?: string
+}
