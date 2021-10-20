@@ -62,10 +62,12 @@
         <h3>Our Solution or Process</h3>
         <p class="pt-2">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy
+          nonumy eirmod tempor invidunt
         </p>
 
-        <div class="mt-5">Steps...</div>
+        <div class="mt-5 steps mx-auto">
+          <Steps :steps="steps" />
+        </div>
       </div>
     </section>
 
@@ -105,12 +107,14 @@ import {
   IButton,
   ITestimonial,
   ITeamMember,
+  IStep,
 } from '~/types/components'
 import Testimonial from '~/components/Testimonial.vue'
 import TeamMeber from '~/components/TeamMeber.vue'
+import Steps from '~/components/Steps.vue'
 
 export default defineComponent({
-  components: { Hero, IconCard, Testimonial, TeamMeber },
+  components: { Hero, IconCard, Testimonial, TeamMeber, Steps },
   setup() {
     const heroBtn: IButton = {
       to: '/',
@@ -187,9 +191,31 @@ export default defineComponent({
       },
     ])
 
-    return { heroBtn, iconCards, testimonials, teamMembers }
+    const steps = reactive<IStep[]>([
+      {
+        title: 'First step',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.',
+      },
+      {
+        title: 'Second step',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.',
+      },
+      {
+        title: 'Third step',
+        description:
+          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.',
+      },
+    ])
+
+    return { heroBtn, iconCards, testimonials, teamMembers, steps }
   },
 })
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.steps {
+  max-width: 400px;
+}
+</style>

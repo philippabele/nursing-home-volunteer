@@ -54,3 +54,8 @@ export interface ITeamMember {
   name: string
   description: string
 }
+
+export interface IStep {
+  title: string
+  description: string
+}
