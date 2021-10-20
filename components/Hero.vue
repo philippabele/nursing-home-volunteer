@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { IButton } from '~/types/misc'
+import { IButton } from '~/types/components'
 
 export default defineComponent({
   props: {

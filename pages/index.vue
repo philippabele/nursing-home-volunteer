@@ -42,9 +42,8 @@ import { defineComponent, ref } from '@nuxtjs/composition-api'
 import Divider from '../components/Divider.vue'
 import ImageBlock from '../components/ImageBlock.vue'
 import Carousel from '~/components/Carousel.vue'
-import { ICarouselSlide } from '~/types/components'
+import { ICarouselSlide, IFeature, IImageBlock } from '~/types/components'
 import Feature from '~/components/Feature.vue'
-import { IFeature, IImageBlock } from '~/types/misc'
 
 export default defineComponent({
   components: { Carousel, Feature, Divider, ImageBlock },

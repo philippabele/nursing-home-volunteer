@@ -76,9 +76,9 @@
 import { defineComponent, reactive } from '@nuxtjs/composition-api'
 import { BIconAwardFill } from 'bootstrap-vue'
 import Hero from '~/components/Hero.vue'
-import { IButton } from '~/types/misc'
+import {} from '~/types/misc'
 import IconCard from '~/components/IconCard.vue'
-import { IIconCard } from '~/types/components'
+import { IIconCard, IButton } from '~/types/components'
 
 export default defineComponent({
   components: { Hero, IconCard },
