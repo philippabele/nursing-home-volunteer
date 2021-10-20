@@ -23,7 +23,20 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr
         </p>
 
-        <div class="mt-5">Icon cards...</div>
+        <div class="mt-5 row">
+          <div
+            v-for="card of iconCards"
+            :key="card.id"
+            class="col-lg-4 feature mb-4"
+          >
+            <IconCard
+              :title="card.title"
+              :icon="card.icon"
+              :description="card.description"
+              :btn="card.btn"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -60,19 +73,46 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+import { BIconAwardFill } from 'bootstrap-vue'
 import Hero from '~/components/Hero.vue'
 import { IButton } from '~/types/misc'
+import IconCard from '~/components/IconCard.vue'
+import { IIconCard } from '~/types/components'
 
 export default defineComponent({
-  components: { Hero },
+  components: { Hero, IconCard },
   setup() {
     const heroBtn: IButton = {
       to: '/',
       text: 'Click me',
     }
 
-    return { heroBtn }
+    const iconCards: IIconCard[] = reactive<IIconCard[]>([
+      {
+        id: 0,
+        icon: BIconAwardFill,
+        title: 'Core Value 1',
+        description: 'Lorem ipsum dolor sit amet',
+        btn: { text: 'Learn More', to: '/' },
+      },
+      {
+        id: 1,
+        icon: BIconAwardFill,
+        title: 'Core Value 2',
+        description: 'Lorem ipsum dolor sit amet',
+        btn: { text: 'Learn More', to: '/' },
+      },
+      {
+        id: 2,
+        icon: BIconAwardFill,
+        title: 'Core Value 3',
+        description: 'Lorem ipsum dolor sit amet',
+        btn: { text: 'Learn More', to: '/' },
+      },
+    ])
+
+    return { heroBtn, iconCards }
   },
 })
 </script>

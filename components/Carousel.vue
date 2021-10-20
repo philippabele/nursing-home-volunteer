@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
-import { ICarouselSlide } from '~/types/carousel'
+import { ICarouselSlide } from '~/types/components'
 
 export default defineComponent({
   props: {

@@ -1,13 +1,13 @@
 <template>
   <main>
-    <Carousel :slides="slides" class="carousel" />
+    <Carousel :slides="slides" class="mb-6" />
 
     <div class="container">
       <div class="row">
         <div
           v-for="feature of features"
           :key="feature.id"
-          class="col-lg-4 feature"
+          class="col-lg-4 mb-4"
         >
           <Feature
             :title="feature.title"
@@ -42,7 +42,7 @@ import { defineComponent, ref } from '@nuxtjs/composition-api'
 import Divider from '../components/Divider.vue'
 import ImageBlock from '../components/ImageBlock.vue'
 import Carousel from '~/components/Carousel.vue'
-import { ICarouselSlide } from '~/types/carousel'
+import { ICarouselSlide } from '~/types/components'
 import Feature from '~/components/Feature.vue'
 import { IFeature, IImageBlock } from '~/types/misc'
 
@@ -132,12 +132,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
-.carousel {
-  margin-bottom: 4rem;
-}
-
-.feature {
-  margin-bottom: 1.5rem;
-}
-</style>
+<style scoped lang="scss"></style>

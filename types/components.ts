@@ -9,3 +9,11 @@ export interface ICarouselSlide {
   btn?: IButton
   align?: 'left' | 'center' | 'right'
 }
+
+export interface IIconCard {
+  id: number
+  icon: Function
+  title: string
+  description: string
+  btn?: IButton
+}
