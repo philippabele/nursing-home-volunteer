@@ -80,7 +80,11 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from '@nuxtjs/composition-api'
-import { BIconAwardFill } from 'bootstrap-vue'
+import {
+  BIconChatSquareQuote,
+  BIconStarFill,
+  BIconBullseye,
+} from 'bootstrap-vue'
 import Hero from '~/components/Hero.vue'
 import {} from '~/types/misc'
 import IconCard from '~/components/IconCard.vue'
@@ -98,21 +102,21 @@ export default defineComponent({
     const iconCards: IIconCard[] = reactive<IIconCard[]>([
       {
         id: 0,
-        icon: BIconAwardFill,
+        icon: BIconBullseye,
         title: 'Core Value 1',
         description: 'Lorem ipsum dolor sit amet',
         btn: { text: 'Learn More', to: '/' },
       },
       {
         id: 1,
-        icon: BIconAwardFill,
+        icon: BIconChatSquareQuote,
         title: 'Core Value 2',
         description: 'Lorem ipsum dolor sit amet',
         btn: { text: 'Learn More', to: '/' },
       },
       {
         id: 2,
-        icon: BIconAwardFill,
+        icon: BIconStarFill,
         title: 'Core Value 3',
         description: 'Lorem ipsum dolor sit amet',
         btn: { text: 'Learn More', to: '/' },
