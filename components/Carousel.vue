@@ -73,46 +73,48 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 .carousel-caption {
   bottom: 3rem;
-}
 
-.carousel-caption p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
 
-.carousel-caption h1 {
-  font-size: calc(1.375rem + 1.5vw);
-}
+    @media (min-width: 40em) {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  }
 
-@media (min-width: 1200px) {
-  .carousel-caption h1 {
-    font-size: 2.5rem;
+  h1 {
+    font-size: calc(1.375rem + 1.5vw);
+
+    @media (min-width: 1200px) {
+      font-size: 2.5rem;
+    }
   }
 }
 
-@media (min-width: 40em) {
-  .carousel-caption > p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
+.slide-left {
+  .carousel-caption {
+    text-align: left;
   }
 }
 
-.slide-left .carousel-caption {
-  text-align: left;
+.slide-center {
+  .carousel-caption {
+    text-align: center;
+  }
 }
 
-.slide-center .carousel-caption {
-  text-align: center;
-}
-
-.slide-right .carousel-caption {
-  text-align: right;
+.slide-right {
+  .carousel-caption {
+    text-align: right;
+  }
 }
 
 .carousel-control-prev-icon {

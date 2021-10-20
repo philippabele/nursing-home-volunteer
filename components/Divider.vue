@@ -10,7 +10,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 hr {
   margin: 5rem 0;
 }

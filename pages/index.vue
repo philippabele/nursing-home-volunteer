@@ -132,7 +132,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .carousel {
   margin-bottom: 4rem;
 }

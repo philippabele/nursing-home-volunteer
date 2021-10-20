@@ -49,14 +49,16 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .feature {
   text-align: center;
 }
 
-.btn__icon {
-  font-size: 16px !important;
-  vertical-align: middle !important;
-  margin-top: -3px;
+.btn {
+  &__icon {
+    font-size: 16px !important;
+    vertical-align: middle !important;
+    margin-top: -3px;
+  }
 }
 </style>
