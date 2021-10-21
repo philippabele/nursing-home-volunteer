@@ -115,6 +115,7 @@ import Steps from '~/components/Steps.vue'
 
 export default defineComponent({
   components: { Hero, IconCard, Testimonial, TeamMeber, Steps },
+  layout: 'landing-page',
   setup() {
     const heroBtn: IButton = {
       to: '/',
