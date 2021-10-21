@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build && nuxt generate",
     "start": "nuxt start",
-    "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "prepare": "husky install",
     "lint": "npm run lint:js",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "docker:build": "docker build -t nursing-home-volunteer .",
+    "docker:run": "docker run -it -p 3000:3000 nursing-home-volunteer"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
