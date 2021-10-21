@@ -50,7 +50,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 p {
   font-size: 1.25rem;
   font-weight: 300;
@@ -60,16 +60,12 @@ h2 {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -0.05rem;
-}
 
-@media (min-width: 40em) {
-  h2 {
+  @media (min-width: 40em) {
     font-size: 50px;
   }
-}
 
-@media (min-width: 62em) {
-  h2 {
+  @media (min-width: 62em) {
     margin-top: 7rem;
   }
 }

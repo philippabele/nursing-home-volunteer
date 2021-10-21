@@ -16,7 +16,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 footer {
   padding-bottom: 3rem;
 }

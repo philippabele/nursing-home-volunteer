@@ -1,5 +1,5 @@
 <template>
-  <hr />
+  <hr class="my-6" />
 </template>
 
 <script lang="ts">
@@ -10,8 +10,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-hr {
-  margin: 5rem 0;
-}
-</style>
+<style scoped lang="scss"></style>
