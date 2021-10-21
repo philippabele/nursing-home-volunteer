@@ -1,31 +1,75 @@
 <template>
-  <footer class="text-white">
+  <footer class="text-white text-center">
     <div class="gradient p-5">
-      <div class="container d-flex justify-content-between align-items-center">
-        <p>Let's get you started</p>
-        <p>Lorem ipsum dolor sit amet</p>
-        <b-button class="px-4" variant="primary" to="/">More</b-button>
+      <div class="container">
+        <div class="row align-items-center">
+          <p class="col-md-4 mb-3 mb-md-0">Let's get you started</p>
+
+          <p class="col-md-4 mb-3 mb-md-0">Lorem ipsum dolor sit amet</p>
+          <div class="col-md-4">
+            <b-button class="px-4" variant="primary" to="#">More</b-button>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="bg-dark p-5">
       <div class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>
-          &copy; 2017–2021 Company, Inc. &middot;
-          <a href="#">Privacy</a> &middot;
-          <a href="#">Terms</a>
-        </p>
+        <b-navbar type="dark" variant="transparent">
+          <b-navbar-nav class="mx-auto">
+            <b-nav-item
+              v-for="item of navItems"
+              :key="item.to"
+              :to="item.to"
+              :active="route.path === item.to"
+            >
+              {{ item.title }}
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-navbar>
+
+        <div class="h4 pb-3 pt-5">
+          <b-link href="/" class="text-white">
+            <BIconTwitter />
+          </b-link>
+          <b-link href="/" class="text-white ml-3">
+            <BIconFacebook />
+          </b-link>
+          <b-link href="/" class="text-white ml-3">
+            <BIconInstagram />
+          </b-link>
+        </div>
+
+        <p>Lorem ipsum dolor sit</p>
+        <p class="text-muted pt-4">© 2017–2021 Company, Inc.</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, ref, useRoute } from '@nuxtjs/composition-api'
+import { BIconTwitter, BIconInstagram, BIconFacebook } from 'bootstrap-vue'
+import { INavItem } from '~/types/misc'
 
 export default defineComponent({
-  setup() {},
+  components: { BIconTwitter, BIconInstagram, BIconFacebook },
+  setup() {
+    const route = useRoute()
+
+    const navItems = ref<INavItem[]>([
+      {
+        title: 'Startseite',
+        to: '/',
+      },
+      {
+        title: 'Landing page',
+        to: '/landing-page',
+      },
+    ])
+
+    return { route, navItems }
+  },
 })
 </script>
 
