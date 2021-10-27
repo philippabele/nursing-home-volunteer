@@ -27,7 +27,7 @@ POSTGRES_PASSWORD=strapi
 The .env file is added to .gitignore and should NOT BE CHECKED IN TO GIT!
 
 ### Step 2: Start database, backend and frontend
-Strapi will run in production mode by default. So you can not make changes in the content type builder. To start in development mode, rename `docker-compose.override.yml.disabled` to `docker-compose.override.yml` first.
+Strapi will run in production mode if docker-compose override file is named `docker-compose.override.yml.disabled`. So you can not make changes in the content type builder. To start in development mode, rename `docker-compose.override.yml.disabled` to `docker-compose.override.yml` first.
 
 ```bash
 # Start backend, db and frontend with docker locally
