@@ -5,14 +5,16 @@ services:
   strapi:
     image: strapi/strapi:latest
     restart: always
+    # .env file includes db name, db username and password
+    env_file: .env
     environment:
       NODE_ENV: production
       DATABASE_CLIENT: postgres
-      DATABASE_NAME: strapi
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
-      DATABASE_USERNAME: strapi
-      DATABASE_PASSWORD: strapi
+      DATABASE_NAME: '${POSTGRES_DB}'
+      DATABASE_USERNAME: '${POSTGRES_USER}'
+      DATABASE_PASSWORD: '${POSTGRES_PASSWORD}'
     volumes:
       - ./backend:/srv/app
     ports:
@@ -24,10 +26,8 @@ services:
   postgres:
     image: postgres
     restart: always
-    environment:
-      POSTGRES_DB: strapi
-      POSTGRES_USER: strapi
-      POSTGRES_PASSWORD: strapi
+    # .env file includes db name, db username and password
+    env_file: .env
     volumes:
       - ./db:/var/lib/postgresql/data
 
