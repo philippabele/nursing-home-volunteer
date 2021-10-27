@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  # strapi may need a while to start after running docker-compose up -d
+  strapi:
+    image: strapi/strapi:latest
+    restart: always
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ./backend:/srv/app
+    ports:
+      - '1337:1337'
+    depends_on:
+      - postgres
+    command: 'strapi start'
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  frontend:
+    # specify Dockerfile path
+    build: ./frontend
+    image: nursing-home-volunteer/frontend
+    ports:
+      - '3000:3000'
