@@ -1,14 +1,4 @@
-# nursing-home-volunteer
-
-## About this project
-
-replace me with information about the use case of volunteering in nursing homes.
-
-replace me with information about the DHBW and its students who make this project possible.
-
-## How to contribute to this project
-
-replace me with information about how we work and how someone could support this project.
+# nursing-home-volunteer Frontend
 
 ## Prerequisites
 
@@ -31,9 +21,6 @@ $ npm run dev
 # build for production and launch server
 $ npm run build
 $ npm run start
-
-# generate static project
-$ npm run generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
