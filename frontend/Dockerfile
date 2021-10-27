@@ -2,6 +2,10 @@ FROM node:14.18-alpine
 
 WORKDIR /usr/src/nuxt-app
 
+# make env variables from docker-compose available to nuxt
+ARG API_HOST
+ENV API_HOST ${API_HOST}
+
 # copy the app, note .dockerignore
 COPY . .
 RUN npm install
