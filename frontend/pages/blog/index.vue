@@ -9,13 +9,18 @@
       </p>
     </section>
 
-    <section class="pt-5">
+    <section class="pt-5 row">
+      <div class="col-lg-3 pb-5 pb-lg-0">
+        <h3>Filter</h3>
+      </div>
+
       <b-overlay
         :show="isLoading"
         rounded
         opacity="0.6"
         spinner-small
         spinner-variant="primary"
+        class="col-lg-9"
       >
         <template v-if="!isLoading">
           <p v-if="!blogPosts.length" class="text-muted">
@@ -23,7 +28,7 @@
           </p>
 
           <div class="row">
-            <div v-for="post of blogPosts" :key="post.id" class="col-lg-4 mb-4">
+            <div v-for="post of blogPosts" :key="post.id" class="col-lg-6 mb-4">
               <BlogPost
                 :title="post.title"
                 :excerpt="
