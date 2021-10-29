@@ -22,19 +22,23 @@
             Wir haben keine Blog Beiträge gefunden.
           </p>
 
-          <div v-for="post of blogPosts" :key="post.id" class="col-lg-4 mb-4">
-            <BlogPost
-              :title="post.title"
-              :excerpt="
-                post.description.length > excerptLength
-                  ? `${post.description.slice(0, excerptLength)}...`
-                  : post.description
-              "
-              :src="
-                post.featuredImage ? appendApiHost(post.featuredImage.url) : ''
-              "
-              :post-id="post.id"
-            />
+          <div class="row">
+            <div v-for="post of blogPosts" :key="post.id" class="col-lg-4 mb-4">
+              <BlogPost
+                :title="post.title"
+                :excerpt="
+                  post.description.length > excerptLength
+                    ? `${post.description.slice(0, excerptLength)}...`
+                    : post.description
+                "
+                :src="
+                  post.featuredImage
+                    ? appendApiHost(post.featuredImage.url)
+                    : ''
+                "
+                :post-id="post.id"
+              />
+            </div>
           </div>
         </template>
       </b-overlay>
@@ -62,10 +66,11 @@ export default defineComponent({
       .get<IBlogPost[]>('blog-posts')
       .then(({ data }) => {
         blogPosts.value = data
-        isLoading.value = false
       })
       .catch((e) => {
         console.error(e)
+      })
+      .finally(() => {
         isLoading.value = false
       })
 

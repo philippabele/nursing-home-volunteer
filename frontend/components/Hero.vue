@@ -1,5 +1,8 @@
 <template>
-  <section :style="{ backgroundImage: `url(${src})` }" class="hero">
+  <section
+    :style="{ backgroundImage: `url(${src})`, height: `${height}px` }"
+    class="hero"
+  >
     <div
       class="
         hero__overlay
@@ -49,13 +52,16 @@ export default defineComponent({
       type: Object as PropType<IButton | undefined>,
       default: () => undefined,
     },
+    height: {
+      type: Number,
+      default: 650,
+    },
   },
 })
 </script>
 
 <style scoped lang="scss">
 .hero {
-  height: 650px;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;

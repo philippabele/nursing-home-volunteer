@@ -11,7 +11,8 @@
       "type": "string"
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "media": {
       "model": "file",
@@ -22,7 +23,7 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false,
+      "required": true,
       "pluginOptions": {}
     },
     "layout": {

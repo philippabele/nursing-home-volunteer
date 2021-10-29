@@ -6,6 +6,7 @@ export interface IMedia {
   name: string
   size: number
   url: string
+  mime: string
 }
 
 export interface IMediaSection {
