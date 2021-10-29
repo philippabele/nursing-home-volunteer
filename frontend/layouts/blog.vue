@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBarV2 transparent />
+    <NavBarV2 />
     <Nuxt />
     <FooterV2 />
   </div>

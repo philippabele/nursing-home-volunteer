@@ -53,6 +53,10 @@ export default defineComponent({
         title: 'Landing page',
         to: '/landing-page',
       },
+      {
+        title: 'Blog',
+        to: '/blog',
+      },
     ])
 
     return { route, navItems }
