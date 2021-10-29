@@ -18,7 +18,7 @@ export default defineComponent({
   layout: 'blog',
   setup() {
     const route = useRoute()
-    const blogId = Number.parseInt(route.value.params.blog) || -1
+    const blogId = Number.parseInt(route.value.params.id) || -1
 
     return { blogId }
   },
