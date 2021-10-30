@@ -21,7 +21,7 @@ services:
       - '1337:1337'
     depends_on:
       - postgres
-    command: 'strapi start'
+    command: bash -c 'strapi build && strapi start'
 
   postgres:
     image: postgres
