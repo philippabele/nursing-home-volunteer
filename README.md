@@ -17,7 +17,9 @@ Make sure to Docker and docker-compose installed on your machine.
 ## Setup with docker
 
 ### Step 1: Set database credentials
+
 - Copy `.env.template` file, rename it to `.env` and change the database credentials to whatever to like, e.g.:
+
 ```
 POSTGRES_DB=strapi
 POSTGRES_USER=strapi
@@ -26,8 +28,7 @@ POSTGRES_PASSWORD=strapi
 
 The .env file is added to .gitignore and should NOT BE CHECKED IN TO GIT!
 
-### Step 2: Start database, backend and frontend
-Strapi will run in production mode if docker-compose override file is named `docker-compose.override.yml.disabled`. So you can not make changes in the content type builder. To start in development mode, rename `docker-compose.override.yml.disabled` to `docker-compose.override.yml` first.
+### Step 2: Start database, backend and frontend for production
 
 ```bash
 # Start backend, db and frontend with docker locally

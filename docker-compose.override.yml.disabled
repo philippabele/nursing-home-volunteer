@@ -1,8 +1,0 @@
-# overwrites default docker-compose file to be used in development
-version: '3'
-
-services:
-  strapi:
-    environment:
-      NODE_ENV: development
-    command: 'strapi dev'
