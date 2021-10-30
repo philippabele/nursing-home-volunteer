@@ -20,7 +20,7 @@
         opacity="0.6"
         spinner-small
         spinner-variant="primary"
-        class="col-lg-9"
+        class="col-lg-9 mx-3 mx-md-0"
       >
         <template v-if="!isLoading">
           <p v-if="!blogPosts.length" class="text-muted">
@@ -28,8 +28,11 @@
           </p>
 
           <div class="row">
-            <div v-for="post of blogPosts" :key="post.id" class="col-lg-6 mb-4">
+            <b-card-group columns>
               <BlogPost
+                v-for="post of blogPosts"
+                :key="post.id"
+                class="mb-5"
                 :title="post.title"
                 :excerpt="
                   post.description.length > excerptLength
@@ -43,7 +46,7 @@
                 "
                 :post-id="post.id"
               />
-            </div>
+            </b-card-group>
           </div>
         </template>
       </b-overlay>
@@ -90,4 +93,18 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@import '../../assets/css/main.scss';
+
+@include media-breakpoint-down(md) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+</style>
