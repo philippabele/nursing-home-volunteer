@@ -41,7 +41,7 @@
                 "
                 :src="
                   post.featuredImage
-                    ? appendApiHost(post.featuredImage.url)
+                    ? getStrapiMediaUrl(post.featuredImage.url)
                     : ''
                 "
                 :post-id="post.id"
@@ -55,10 +55,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, useContext } from '@nuxtjs/composition-api'
-import { NuxtAxiosInstance } from '@nuxtjs/axios'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 import BlogPost from '~/components/BlogPost.vue'
 import { IBlogPost } from '~/types/blog'
+import { getStrapiMediaUrl, useAxios } from '~/utils/strapi'
 
 export default defineComponent({
   components: { BlogPost },
@@ -67,8 +67,7 @@ export default defineComponent({
     const isLoading = ref(true)
     const blogPosts = ref<IBlogPost[]>([])
 
-    const context = useContext()
-    const axios = (context as any).$axios as NuxtAxiosInstance
+    const { axios } = useAxios()
 
     axios
       .get<IBlogPost[]>('blog-posts')
@@ -84,11 +83,7 @@ export default defineComponent({
 
     const excerptLength = ref(80)
 
-    const appendApiHost = (url: string): string => {
-      return `${axios.defaults.baseURL ?? ''}${url}`
-    }
-
-    return { isLoading, blogPosts, excerptLength, appendApiHost }
+    return { isLoading, blogPosts, excerptLength, getStrapiMediaUrl }
   },
 })
 </script>

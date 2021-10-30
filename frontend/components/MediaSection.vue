@@ -51,14 +51,9 @@
 </template>
 
 <script lang="ts">
-import { NuxtAxiosInstance } from '@nuxtjs/axios'
-import {
-  defineComponent,
-  PropType,
-  computed,
-  useContext,
-} from '@nuxtjs/composition-api'
+import { defineComponent, PropType, computed } from '@nuxtjs/composition-api'
 import { IMedia } from '~/types/blog'
+import { getStrapiMediaUrl } from '~/utils/strapi'
 
 export default defineComponent({
   props: {
@@ -80,15 +75,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const context = useContext()
-    const axios = (context as any).$axios as NuxtAxiosInstance
-
-    const appendApiHost = (url: string): string => {
-      return `${axios.defaults.baseURL ?? ''}${url}`
-    }
-
-    const src = computed((): string => appendApiHost(props.media.url))
-
+    const src = computed((): string => getStrapiMediaUrl(props.media.url))
     const mediaType = computed((): string => props.media.mime.split('/')[0])
 
     return { src, mediaType }

@@ -2,7 +2,9 @@
   <main>
     <Hero
       :src="
-        post && post.featuredImage ? appendApiHost(post.featuredImage.url) : ''
+        post && post.featuredImage
+          ? getStrapiMediaUrl(post.featuredImage.url)
+          : ''
       "
       :title="post ? post.title : ''"
       :height="400"
@@ -48,28 +50,25 @@
 </template>
 
 <script lang="ts">
-import { NuxtAxiosInstance } from '@nuxtjs/axios'
-import {
-  defineComponent,
-  useRoute,
-  ref,
-  useContext,
-} from '@nuxtjs/composition-api'
+import { defineComponent, useRoute, ref } from '@nuxtjs/composition-api'
 import { BIconArrowLeft } from 'bootstrap-vue'
 import { IBlogPost } from '~/types/blog'
 import Hero from '~/components/Hero.vue'
 import MediaSection from '~/components/MediaSection.vue'
+import { getStrapiMediaUrl, useAxios } from '~/utils/strapi'
 
 export default defineComponent({
   components: { Hero, BIconArrowLeft, MediaSection },
   layout: 'landing-page',
   setup() {
+    const isLoading = ref(true)
+
     const route = useRoute()
     const blogId = Number.parseInt(route.value.params.id) || -1
-    const isLoading = ref(true)
     const post = ref<IBlogPost | null>(null)
-    const context = useContext()
-    const axios = (context as any).$axios as NuxtAxiosInstance
+
+    const { axios } = useAxios()
+
     if (blogId !== -1) {
       axios
         .get<IBlogPost>(`blog-posts/${blogId}`)
@@ -84,11 +83,7 @@ export default defineComponent({
         })
     }
 
-    const appendApiHost = (url: string): string => {
-      return `${axios.defaults.baseURL ?? ''}${url}`
-    }
-
-    return { isLoading, post, appendApiHost }
+    return { isLoading, post, getStrapiMediaUrl }
   },
 })
 </script>
