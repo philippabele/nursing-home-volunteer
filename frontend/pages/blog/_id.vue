@@ -25,7 +25,7 @@
           </b-button>
         </div>
 
-        <div v-if="!post" class="container">
+        <div v-if="!post" class="container pb-6">
           <p>Der Blog Beitrag konnte nicht geladen werden.</p>
         </div>
 

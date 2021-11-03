@@ -23,11 +23,15 @@
         class="col-lg-9 mx-3 mx-md-0"
       >
         <template v-if="!isLoading">
-          <p v-if="!blogPosts.length" class="text-muted">
+          <p v-if="hasError" class="text-muted">
+            Beim Laden der Blog Beiträge ist ein Fehler aufgetreten.
+          </p>
+
+          <p v-else-if="!blogPosts.length" class="text-muted">
             Wir haben keine Blog Beiträge gefunden.
           </p>
 
-          <div class="row">
+          <div v-else class="row">
             <b-card-group columns>
               <BlogPost
                 v-for="post of blogPosts"
@@ -65,6 +69,7 @@ export default defineComponent({
   layout: 'blog',
   setup() {
     const isLoading = ref(true)
+    const hasError = ref(false)
     const blogPosts = ref<IBlogPost[]>([])
 
     const { axios } = useAxios()
@@ -75,7 +80,8 @@ export default defineComponent({
         blogPosts.value = data
       })
       .catch((e) => {
-        console.error(e)
+        console.error('Error while fetching blog posts', e)
+        hasError.value = true
       })
       .finally(() => {
         isLoading.value = false
@@ -83,7 +89,7 @@ export default defineComponent({
 
     const excerptLength = ref(80)
 
-    return { isLoading, blogPosts, excerptLength, getStrapiMediaUrl }
+    return { isLoading, hasError, blogPosts, excerptLength, getStrapiMediaUrl }
   },
 })
 </script>
