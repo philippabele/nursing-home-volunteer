@@ -47,7 +47,7 @@ docker-compose up -d --build
 
 ### Step 3: Configure Backend (database)
 
-1. Login to strapi
+1. Login to strapi at http://localhost:1337/admin. If you just created a clean installation/database you will be asked to create an admin user account.
 2. Go to http://localhost:1337/admin/settings/users-permissions/roles
 3. Click on Public
 4. Under Tab "Permissions", open "Application" accordion and check "find" and "findone". This will allowed the frontend to request the blog posts without an API key.
