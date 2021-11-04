@@ -11,7 +11,11 @@
             v-for="item of navItems"
             :key="item.to"
             :to="item.to"
-            :active="route.path === item.to"
+            :active="
+              item.to === '/'
+                ? route.path === item.to
+                : route.path.includes(item.to)
+            "
           >
             {{ item.title }}
           </b-nav-item>
@@ -52,6 +56,10 @@ export default defineComponent({
       {
         title: 'Landing page',
         to: '/landing-page',
+      },
+      {
+        title: 'Blog',
+        to: '/blog',
       },
     ])
 

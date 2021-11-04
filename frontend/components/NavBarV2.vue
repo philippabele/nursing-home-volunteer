@@ -1,6 +1,10 @@
 <template>
-  <header class="position-absolute w-100">
-    <b-navbar toggleable="lg" type="dark" variant="transparent">
+  <header class="w-100" :class="{ 'position-absolute': transparent }">
+    <b-navbar
+      toggleable="lg"
+      type="dark"
+      :variant="transparent ? 'transparent' : 'dark'"
+    >
       <div class="container">
         <b-navbar-brand>Company Name</b-navbar-brand>
 
@@ -12,7 +16,11 @@
               v-for="item of navItems"
               :key="item.to"
               :to="item.to"
-              :active="route.path === item.to"
+              :active="
+                item.to === '/'
+                  ? route.path === item.to
+                  : route.path.includes(item.to)
+              "
             >
               {{ item.title }}
             </b-nav-item>
@@ -45,6 +53,10 @@ export default defineComponent({
       {
         title: 'Landing page',
         to: '/landing-page',
+      },
+      {
+        title: 'Blog',
+        to: '/blog',
       },
     ])
 
