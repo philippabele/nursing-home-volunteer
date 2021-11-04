@@ -23,13 +23,7 @@ const btnColorClass = computed((): string => `btn-${props.color}`)
 </script>
 
 <template>
-  <button
-    type="button"
-    class="btn btn-primary"
-    :class="btnColorClass"
-    :disabled="disabled"
-    @click="navigate"
-  >
+  <button type="button" class="btn" :class="btnColorClass" :disabled="disabled" @click="navigate">
     <slot />
   </button>
 </template>
