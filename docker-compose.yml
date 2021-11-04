@@ -3,25 +3,23 @@ version: '3'
 services:
   # strapi may need a while to start after running docker-compose up -d
   strapi:
-    image: strapi/strapi:latest
+    # specify Dockerfile path
+    build: ./backend
+    image: nursing-home-volunteer/backend
     restart: always
     # .env file includes db name, db username and password
     env_file: .env
     environment:
-      NODE_ENV: production
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
       DATABASE_NAME: '${POSTGRES_DB}'
       DATABASE_USERNAME: '${POSTGRES_USER}'
       DATABASE_PASSWORD: '${POSTGRES_PASSWORD}'
-    volumes:
-      - ./backend:/srv/app
     ports:
       - '1337:1337'
     depends_on:
       - postgres
-    command: bash -c 'strapi build && strapi start'
 
   postgres:
     image: postgres
