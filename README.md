@@ -36,9 +36,9 @@ docker-compose up -d
 ```
 
 ```bash
-# Rebuild frontend image and restart backend, db and frontend
+# Rebuild frontend and backend image and restart everything
 docker-compose up -d --build
 ```
 
-- Frontend will be available on: http://localhost:3000
+- Frontend will be available on: http://localhost
 - Backend will be available on: http://localhost:1337
