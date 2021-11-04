@@ -14,7 +14,8 @@
     "*.{js,json,ts,html,scss,vue,md}": "prettier --write"
   },
   "dependencies": {
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^2.5.0",
