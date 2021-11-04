@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { IButton } from '../types/components'
+import BButton from './bootstrap/BButton.vue'
 
 interface HeroProps {
   src: string
@@ -23,15 +24,9 @@ withDefaults(defineProps<HeroProps>(), {
         <h1>{{ title }}</h1>
         <p v-if="subtitle" class="mt-4">{{ subtitle }}</p>
 
-        <b-button
-          v-if="btn"
-          class="mt-4 px-5"
-          :to="!btn.external ? btn.to : undefined"
-          :href="btn.external ? btn.to : undefined"
-          variant="primary"
-        >
+        <BButton v-if="btn" class="mt-4 px-5" :href="btn.href">
           {{ btn.text }}
-        </b-button>
+        </BButton>
       </div>
     </div>
   </section>

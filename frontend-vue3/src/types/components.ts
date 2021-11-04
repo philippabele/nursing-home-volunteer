@@ -1,8 +1,18 @@
+export type BootstrapColor =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'light'
+  | 'dark'
+  | 'link'
+
 export interface IButton {
   text: string
-  to: string
-  /** If true, will use href instead of to attribute for navigating */
-  external?: boolean
+  href: string
+  disabled?: boolean
 }
 
 export interface ICarouselSlide {
@@ -17,7 +27,7 @@ export interface ICarouselSlide {
 
 export interface IIconCard {
   id: number
-  icon: Function
+  icon: unknown
   title: string
   description: string
   btn?: IButton

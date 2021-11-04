@@ -4,7 +4,7 @@ import AppHero from '../components/AppHero.vue'
 import { IButton } from '../types/components'
 
 const heroBtn: IButton = {
-  to: '/',
+  href: '/',
   text: 'Click me',
 }
 </script>
