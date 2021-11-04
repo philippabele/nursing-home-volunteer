@@ -27,7 +27,7 @@ export interface ICarouselSlide {
 
 export interface IIconCard {
   id: number
-  icon: unknown
+  icon: string
   title: string
   description: string
   btn?: IButton

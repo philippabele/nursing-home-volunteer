@@ -3,7 +3,7 @@ import { IButton } from '../types/components'
 import BButton from './bootstrap/BButton.vue'
 
 interface IconCardProps {
-  icon: unknown
+  icon: string
   title: string
   description: string
   btn?: IButton
@@ -14,7 +14,7 @@ defineProps<IconCardProps>()
 
 <template>
   <div class="icon-card p-4 rounded border">
-    <!-- <component :is="icon" class="icon-card__icon"></component> -->
+    <img :src="icon" class="icon-card__icon" alt="Icon" />
     <h5 class="pt-3">{{ title }}</h5>
     <p>{{ description }}</p>
 

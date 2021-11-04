@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import bullseyeIconUrl from 'bootstrap-icons/icons/bullseye.svg'
+import chatSquareQuoteIconUrl from 'bootstrap-icons/icons/chat-square-quote.svg'
+import starFillIconUrl from 'bootstrap-icons/icons/star-fill.svg'
 import { reactive } from 'vue'
 import heroImgUrl from '../assets/hero.jpg'
 import placeholderImgUrl from '../assets/placeholder.jpg'
@@ -17,21 +20,21 @@ const heroBtn: IButton = {
 const iconCards = reactive<IIconCard[]>([
   {
     id: 0,
-    icon: '',
+    icon: bullseyeIconUrl,
     title: 'Core Value 1',
     description: 'Lorem ipsum dolor sit amet',
     btn: { text: 'Learn More', href: '/' },
   },
   {
     id: 1,
-    icon: '',
+    icon: chatSquareQuoteIconUrl,
     title: 'Core Value 2',
     description: 'Lorem ipsum dolor sit amet',
     btn: { text: 'Learn More', href: '/' },
   },
   {
     id: 2,
-    icon: '',
+    icon: starFillIconUrl,
     title: 'Core Value 3',
     description: 'Lorem ipsum dolor sit amet',
     btn: { text: 'Learn More', href: '/' },
