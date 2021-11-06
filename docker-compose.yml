@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  strapi:
+    # specify Dockerfile path
+    build: ./backend
+    image: nursing-home-volunteer/backend
+    restart: always
+    # .env file includes db name, db username and password
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: '${POSTGRES_DB}'
+      DATABASE_USERNAME: '${POSTGRES_USER}'
+      DATABASE_PASSWORD: '${POSTGRES_PASSWORD}'
+    ports:
+      - '1337:1337'
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    restart: always
+    # .env file includes db name, db username and password
+    env_file: .env
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  frontend:
+    build:
+      # specify Dockerfile path
+      context: ./frontend
+      args:
+        API_HOST: http://localhost:1337
+    image: nursing-home-volunteer/frontend
+    ports:
+      - '80:80'

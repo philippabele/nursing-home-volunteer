@@ -1,68 +1,51 @@
 # nursing-home-volunteer
 
-## Build Setup
+## About this project
 
-```bash
-# install dependencies
-$ npm install
+replace me with information about the use case of volunteering in nursing homes.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+replace me with information about the DHBW and its students who make this project possible.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## How to contribute to this project
 
-# generate static project
-$ npm run generate
+replace me with information about how we work and how someone could support this project.
+
+## Prerequisites
+
+Make sure to Docker and docker-compose installed on your machine.
+
+## Setup with docker
+
+### Step 1: Set database credentials
+
+- Copy `.env.template` file, rename it to `.env` and change the database credentials to whatever to like, e.g.:
+
+```
+POSTGRES_DB=strapi
+POSTGRES_USER=strapi
+POSTGRES_PASSWORD=strapi
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+The .env file is added to .gitignore and should NOT BE CHECKED IN TO GIT!
 
-## Special Directories
+### Step 2: Start database, backend and frontend for production
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+```bash
+# Start backend, db and frontend with docker locally
+docker-compose up -d
+```
 
-### `assets`
+```bash
+# Rebuild frontend and backend image and restart everything
+docker-compose up -d --build
+```
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+- Frontend will be available on: http://localhost
+- Backend will be available on: http://localhost:1337
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+### Step 3: Configure Backend (database)
 
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+1. Login to strapi at http://localhost:1337/admin. If you just created a clean installation/database you will be asked to create an admin user account.
+2. Go to http://localhost:1337/admin/settings/users-permissions/roles
+3. Click on Public
+4. Under Tab "Permissions", open "Application" accordion and check "find" and "findone". This will allowed the frontend to request the blog posts without an API key.
