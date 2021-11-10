@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import BAvatar from './bootstrap/BAvatar.vue'
+
 defineProps<{
   avatar: string
   name: string
@@ -9,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="text-center">
-    <BAvatar size="100%" :src="avatar" rounded />
+    <BAvatar size="100%" :src="avatar" :rounded="true" />
 
     <p class="mb-0 font-weight-bolder">{{ name }}</p>
     <p class="m-0">{{ description }}</p>
