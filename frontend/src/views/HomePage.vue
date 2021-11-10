@@ -7,10 +7,10 @@ import heroImgUrl from '../assets/hero.jpg'
 import placeholderImgUrl from '../assets/placeholder.jpg'
 import AppHero from '../components/AppHero.vue'
 import AppIconCard from '../components/AppIconCard.vue'
-import AppLayout from '../components/AppLayout.vue'
 import AppSteps from '../components/AppSteps.vue'
 import AppTeamMember from '../components/AppTeamMember.vue'
 import AppTestimonial from '../components/AppTestimonial.vue'
+import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { IButton, IIconCard, IStep, ITeamMember, ITestimonial } from '../types/components'
 
 const heroBtn: IButton = {
@@ -108,7 +108,7 @@ const steps = reactive<IStep[]>([
 </script>
 
 <template>
-  <AppLayout :transparent-header="true">
+  <AppLayoutDefault :transparent-header="true">
     <main>
       <AppHero
         :src="heroImgUrl"
@@ -189,7 +189,7 @@ const steps = reactive<IStep[]>([
         </div>
       </section>
     </main>
-  </AppLayout>
+  </AppLayoutDefault>
 </template>
 
 <style scoped lang="scss">
