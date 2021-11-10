@@ -21,8 +21,4 @@ withDefaults(defineProps<AvatarProps>(), {
   />
 </template>
 
-<style scoped lang="scss">
-// .avatar {
-//   border-radius: 50%;
-// }
-</style>
+<style scoped lang="scss"></style>
