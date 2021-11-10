@@ -1,3 +1,33 @@
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { INavItem } from '../types/misc'
+import { navigate } from '../utils/router'
+
+interface HeaderProps {
+  transparent?: boolean
+}
+
+defineProps<HeaderProps>()
+
+const route = useRoute()
+
+const navItems = ref<INavItem[]>([
+  {
+    title: 'Startseite',
+    href: '/',
+  },
+  {
+    title: 'Landing page',
+    href: '/landing-page',
+  },
+  {
+    title: 'Blog',
+    href: '/blog',
+  },
+])
+</script>
+
 <template>
   <header class="w-100" :class="{ 'position-absolute': transparent }">
     <nav
@@ -47,36 +77,6 @@
     </nav>
   </header>
 </template>
-
-<script lang="ts" setup>
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
-import { INavItem } from '../types/misc'
-import { navigate } from '../utils/router'
-
-interface HeaderProps {
-  transparent?: boolean
-}
-
-defineProps<HeaderProps>()
-
-const route = useRoute()
-
-const navItems = ref<INavItem[]>([
-  {
-    title: 'Startseite',
-    href: '/',
-  },
-  {
-    title: 'Landing page',
-    href: '/landing-page',
-  },
-  {
-    title: 'Blog',
-    href: '/blog',
-  },
-])
-</script>
 
 <style lang="scss" scoped>
 .nav-link {
