@@ -7,6 +7,7 @@ import heroImgUrl from '../assets/hero.jpg'
 import placeholderImgUrl from '../assets/placeholder.jpg'
 import AppHero from '../components/AppHero.vue'
 import AppIconCard from '../components/AppIconCard.vue'
+import AppLayout from '../components/AppLayout.vue'
 import AppSteps from '../components/AppSteps.vue'
 import AppTeamMember from '../components/AppTeamMember.vue'
 import AppTestimonial from '../components/AppTestimonial.vue'
@@ -107,86 +108,88 @@ const steps = reactive<IStep[]>([
 </script>
 
 <template>
-  <main>
-    <AppHero
-      :src="heroImgUrl"
-      title="Our product or service"
-      subtitle="Lorem ipsum dolor sit amet"
-      :btn="heroBtn"
-    />
+  <AppLayout :transparent="true">
+    <main>
+      <AppHero
+        :src="heroImgUrl"
+        title="Our product or service"
+        subtitle="Lorem ipsum dolor sit amet"
+        :btn="heroBtn"
+      />
 
-    <section class="py-6 text-center container">
-      <h2>Our Offering</h2>
-      <p class="pt-2">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-        et justo duo dolores et ea rebum.
-      </p>
-    </section>
+      <section class="py-6 text-center container">
+        <h2>Our Offering</h2>
+        <p class="pt-2">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+          accusam et justo duo dolores et ea rebum.
+        </p>
+      </section>
 
-    <section class="bg-light">
-      <div class="py-6 text-center container">
-        <h3>Benefits at a glance</h3>
-        <p class="pt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+      <section class="bg-light">
+        <div class="py-6 text-center container">
+          <h3>Benefits at a glance</h3>
+          <p class="pt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+
+          <div class="mt-5 row">
+            <div v-for="card of iconCards" :key="card.id" class="col-lg-4 mb-4">
+              <AppIconCard
+                :title="card.title"
+                :icon="card.icon"
+                :description="card.description"
+                :btn="card.btn"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-6 text-center container">
+        <h3>Testimonials</h3>
+        <p class="pt-2">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        </p>
 
         <div class="mt-5 row">
-          <div v-for="card of iconCards" :key="card.id" class="col-lg-4 mb-4">
-            <AppIconCard
-              :title="card.title"
-              :icon="card.icon"
-              :description="card.description"
-              :btn="card.btn"
+          <div v-for="t of testimonials" :key="t.id" class="col-lg-6 mb-4">
+            <AppTestimonial
+              :quote="t.quote"
+              :avatar="t.avatar"
+              :name="t.name"
+              :position="t.position"
+              :location="t.location"
             />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="py-6 text-center container">
-      <h3>Testimonials</h3>
-      <p class="pt-2">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-      </p>
+      <section class="bg-light">
+        <div class="py-6 text-center container">
+          <h3>Our Solution or Process</h3>
+          <p class="pt-2">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt
+          </p>
 
-      <div class="mt-5 row">
-        <div v-for="t of testimonials" :key="t.id" class="col-lg-6 mb-4">
-          <AppTestimonial
-            :quote="t.quote"
-            :avatar="t.avatar"
-            :name="t.name"
-            :position="t.position"
-            :location="t.location"
-          />
+          <div class="mt-5 steps mx-auto">
+            <AppSteps :steps="steps" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="bg-light">
-      <div class="py-6 text-center container">
-        <h3>Our Solution or Process</h3>
-        <p class="pt-2">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt
-        </p>
+      <section class="py-6 text-center container">
+        <h3>Our Team or Partners</h3>
+        <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
 
-        <div class="mt-5 steps mx-auto">
-          <AppSteps :steps="steps" />
+        <div class="mt-5 row">
+          <div v-for="m of teamMembers" :key="m.id" class="col-lg-3 col-md-6 mb-4">
+            <AppTeamMember :avatar="m.avatar" :name="m.name" :description="m.description" />
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="py-6 text-center container">
-      <h3>Our Team or Partners</h3>
-      <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
-
-      <div class="mt-5 row">
-        <div v-for="m of teamMembers" :key="m.id" class="col-lg-3 col-md-6 mb-4">
-          <AppTeamMember :avatar="m.avatar" :name="m.name" :description="m.description" />
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </AppLayout>
 </template>
 
 <style scoped lang="scss">
