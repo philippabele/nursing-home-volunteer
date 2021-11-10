@@ -3,14 +3,14 @@ import TheFooter from './TheFooter.vue'
 import TheHeader from './TheHeader.vue'
 
 interface LayoutProps {
-  transparent?: boolean
+  transparentHeader?: boolean
 }
 
 defineProps<LayoutProps>()
 </script>
 
 <template>
-  <TheHeader :transparent="transparent" />
+  <TheHeader :transparent="transparentHeader" />
   <slot />
   <TheFooter />
 </template>

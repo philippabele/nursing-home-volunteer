@@ -108,7 +108,7 @@ const steps = reactive<IStep[]>([
 </script>
 
 <template>
-  <AppLayout :transparent="true">
+  <AppLayout :transparent-header="true">
     <main>
       <AppHero
         :src="heroImgUrl"
