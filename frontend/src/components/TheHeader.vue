@@ -29,7 +29,7 @@ const navItems = ref<INavItem[]>([
 </script>
 
 <template>
-  <header class="w-100" :class="{ 'position-absolute': transparent }">
+  <header class="w-100" :class="{ 'position-absolute': transparent, 'sticky-top': !transparent }">
     <nav
       class="navbar navbar-expand-lg navbar-dark"
       :class="{
@@ -79,6 +79,12 @@ const navItems = ref<INavItem[]>([
 </template>
 
 <style lang="scss" scoped>
+@import '../styles/bootstrap';
+
+header {
+  z-index: $zindex-sticky;
+}
+
 .nav-link {
   cursor: pointer;
 }

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import AppDivider from '../components/AppDivider.vue'
 import AppFeature from '../components/AppFeature.vue'
+import AppImageBlock from '../components/AppImageBlock.vue'
 import BCarousel from '../components/bootstrap/BCarousel.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { ICarouselSlide, IFeature, IImageBlock } from '../types/components'
@@ -101,7 +102,18 @@ const imageBlocks = ref<IImageBlock[]>([
           </div>
         </section>
 
-        <AppDivider />
+        <section v-for="(block, index) of imageBlocks" :key="block.id">
+          <AppDivider />
+
+          <AppImageBlock
+            :src="block.src"
+            :title="block.title"
+            :title-muted="block.titleMuted"
+            :description="block.description"
+            :image-pos="index % 2 === 1 ? 'left' : 'right'"
+            :class="{ 'mb-6': index === imageBlocks.length - 1 }"
+          />
+        </section>
       </div>
     </main>
   </AppLayoutDefault>
