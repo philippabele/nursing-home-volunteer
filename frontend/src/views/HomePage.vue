@@ -131,8 +131,8 @@ const steps = reactive<IStep[]>([
           <h3>Benefits at a glance</h3>
           <p class="pt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
 
-          <div class="mt-5 row">
-            <div v-for="card of iconCards" :key="card.id" class="col-lg-4 mb-4">
+          <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div v-for="card of iconCards" :key="card.id" class="col">
               <AppIconCard
                 :title="card.title"
                 :icon="card.icon"
@@ -151,8 +151,8 @@ const steps = reactive<IStep[]>([
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
         </p>
 
-        <div class="mt-5 row">
-          <div v-for="t of testimonials" :key="t.id" class="col-lg-6 mb-4">
+        <div class="mt-5 row row-cols-1 row-cols-md-2 g-4">
+          <div v-for="t of testimonials" :key="t.id" class="col">
             <AppTestimonial
               :quote="t.quote"
               :avatar="t.avatar"
@@ -182,8 +182,8 @@ const steps = reactive<IStep[]>([
         <h3>Our Team or Partners</h3>
         <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
 
-        <div class="mt-5 row">
-          <div v-for="m of teamMembers" :key="m.id" class="col-lg-3 col-md-6 mb-4">
+        <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div v-for="m of teamMembers" :key="m.id" class="col">
             <AppTeamMember :avatar="m.avatar" :name="m.name" :description="m.description" />
           </div>
         </div>

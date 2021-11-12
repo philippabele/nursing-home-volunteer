@@ -91,8 +91,8 @@ const imageBlocks = ref<IImageBlock[]>([
       <BCarousel :slides="slides" class="mb-6" />
 
       <div class="container">
-        <section class="row">
-          <div v-for="feature of features" :key="feature.id" class="col-lg-4 mb-4">
+        <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div v-for="feature of features" :key="feature.id" class="col">
             <AppFeature
               :title="feature.title"
               :description="feature.description"

@@ -24,7 +24,7 @@ withDefaults(defineProps<ImageBlockProps>(), {
       <p v-if="description">{{ description }}</p>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-5 mt-4 mt-md-0">
       <img :src="src" class="img-fluid mx-auto d-block" alt="Image" />
     </div>
   </div>
