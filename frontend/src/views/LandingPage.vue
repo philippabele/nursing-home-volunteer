@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import AppCarousel from '../components/AppCarousel.vue'
+import BCarousel from '../components/bootstrap/BCarousel.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { ICarouselSlide, IFeature, IImageBlock } from '../types/components'
 
@@ -10,7 +10,6 @@ const slides = ref<ICarouselSlide[]>([
     caption: 'Example headline.',
     text: 'Some representative placeholder content for the first slide of the carousel.',
     btn: { text: 'Sign up today', href: '#' },
-    align: 'left',
   },
   {
     id: 1,
@@ -86,7 +85,7 @@ const imageBlocks = ref<IImageBlock[]>([
 <template>
   <AppLayoutDefault>
     <main>
-      <AppCarousel :slides="slides" />
+      <BCarousel :slides="slides" />
     </main>
   </AppLayoutDefault>
 </template>

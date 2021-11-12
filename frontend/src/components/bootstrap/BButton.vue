@@ -7,20 +7,24 @@ interface BButtonProps {
   href: string
   color?: BootstrapColor
   disabled?: boolean
+  size?: 'sm' | 'lg'
 }
 
 const props = withDefaults(defineProps<BButtonProps>(), {
   color: 'primary',
+  size: undefined,
 })
 
-const btnColorClass = computed((): string => `btn-${props.color}`)
+const btnClasses = computed(
+  (): string => `btn-${props.color} ${props.size ? 'btn-' + props.size : ''}`
+)
 </script>
 
 <template>
   <button
     type="button"
     class="btn"
-    :class="btnColorClass"
+    :class="btnClasses"
     :disabled="disabled"
     @click="navigate(href)"
   >

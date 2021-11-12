@@ -20,7 +20,6 @@ export interface ICarouselSlide {
   caption?: string
   text?: string
   imgSrc?: string
-  imgAlt?: string
   btn?: IButton
   align?: 'left' | 'center' | 'right'
 }
