@@ -8,6 +8,7 @@ import BSpinner from '../components/bootstrap/BSpinner.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { useBlogStore } from '../store/blog'
 import { IBlogPost } from '../types/blog'
+import { markdownToHtml } from '../utils/strings'
 
 const { params } = useRoute()
 const blogId = Number.parseInt(Array.isArray(params.id) ? '' : params.id) || -1
@@ -43,9 +44,11 @@ if (blogId !== -1) blogStore.fetchPost(blogId)
 
         <BSpinner v-if="blogStore.isLoading" />
 
-        <div v-else-if="post" class="text-center">
-          {{ post.description }}
-        </div>
+        <div
+          v-else-if="post"
+          class="text-center"
+          v-html="markdownToHtml(post ? post.description : '')"
+        ></div>
       </div>
 
       <template v-if="post">

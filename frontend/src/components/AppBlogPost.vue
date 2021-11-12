@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { stripMarkdown } from '../utils/strings'
 import BButton from './bootstrap/BButton.vue'
 
 interface BlogPostProps {
@@ -18,7 +19,7 @@ defineProps<BlogPostProps>()
     <div class="card-body">
       <h3 class="card-title h4">{{ title }}</h3>
       <p class="card-text">
-        {{ excerpt }}
+        {{ stripMarkdown(excerpt) }}
       </p>
 
       <BButton :href="href">Weiterlesen</BButton>

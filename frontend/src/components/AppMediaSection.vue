@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { IMedia } from '../types/blog'
+import { markdownToHtml } from '../utils/strings'
 
 interface MediaSectionProps {
   title?: string
@@ -29,7 +30,7 @@ const mediaType = computed((): string => props.media.mime.split('/')[0])
           }"
         >
           <h2 v-if="title">{{ title }}</h2>
-          <p>{{ description }}</p>
+          <div v-html="markdownToHtml(description)"></div>
         </div>
 
         <div class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0">
