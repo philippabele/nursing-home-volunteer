@@ -11,6 +11,16 @@ const routes: RouteRecordRaw[] = [
     path: '/landing-page',
     component: () => import('../views/LandingPage.vue'),
   },
+  {
+    path: '/blog',
+    component: () => import('../views/NestedRoute.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('../views/BlogOverview.vue'),
+      },
+    ],
+  },
   // catch-all 404 route
   {
     path: '/:pathMatch(.*)*',

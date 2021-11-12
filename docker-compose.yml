@@ -33,7 +33,7 @@ services:
       # specify Dockerfile path
       context: ./frontend
       args:
-        API_HOST: http://localhost:1337
+        VITE_APP_API_HOST: http://localhost:1337
     image: nursing-home-volunteer/frontend
     ports:
       - '80:80'
