@@ -8,11 +8,13 @@ interface BButtonProps {
   color?: BootstrapColor
   disabled?: boolean
   size?: 'sm' | 'lg'
+  icon?: string
 }
 
 const props = withDefaults(defineProps<BButtonProps>(), {
   color: 'primary',
   size: undefined,
+  icon: '',
 })
 
 const btnClasses = computed(
@@ -29,7 +31,17 @@ const btnClasses = computed(
     @click="navigate(href)"
   >
     <slot />
+    <img v-if="icon" :src="icon" class="ms-1 btn__icon" alt="Icon" />
   </button>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.btn {
+  &__icon {
+    margin-top: -3px;
+
+    // make icon white
+    filter: invert(1);
+  }
+}
+</style>

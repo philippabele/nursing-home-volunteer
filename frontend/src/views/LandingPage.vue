@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+import AppDivider from '../components/AppDivider.vue'
+import AppFeature from '../components/AppFeature.vue'
 import BCarousel from '../components/bootstrap/BCarousel.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { ICarouselSlide, IFeature, IImageBlock } from '../types/components'
@@ -85,7 +87,22 @@ const imageBlocks = ref<IImageBlock[]>([
 <template>
   <AppLayoutDefault>
     <main>
-      <BCarousel :slides="slides" />
+      <BCarousel :slides="slides" class="mb-6" />
+
+      <div class="container">
+        <section class="row">
+          <div v-for="feature of features" :key="feature.id" class="col-lg-4 mb-4">
+            <AppFeature
+              :title="feature.title"
+              :description="feature.description"
+              :btn="feature.btn"
+              :src="feature.src"
+            />
+          </div>
+        </section>
+
+        <AppDivider />
+      </div>
     </main>
   </AppLayoutDefault>
 </template>

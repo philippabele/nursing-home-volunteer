@@ -12,13 +12,18 @@ withDefaults(defineProps<AvatarProps>(), {
 </script>
 
 <template>
-  <img
-    :src="src"
-    class="img-fluid mb-3 avatar"
-    alt="Avatar"
-    :style="{ height: size, width: size }"
-    :class="{ rounded, 'rounded-circle': !rounded }"
-  />
+  <div class="mb-3">
+    <img
+      v-if="src"
+      :src="src"
+      class="img-fluid avatar"
+      alt="Avatar"
+      :style="{ height: size, width: size }"
+      :class="{ rounded, 'rounded-circle': !rounded }"
+    />
+
+    <div v-else class="rounded-circle bg-dark mx-auto" :style="{ height: size, width: size }"></div>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>
