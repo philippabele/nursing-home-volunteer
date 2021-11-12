@@ -19,3 +19,7 @@ export function addApiHostToMedia(media: IMedia): IMedia {
   clone.formats.thumbnail.url = addApiHostToMediaUrl(clone.formats.thumbnail.url)
   return clone
 }
+
+export function trimPostDescription(description: string, length: number): string {
+  return description.length > length ? `${description.slice(0, length)}...` : description
+}

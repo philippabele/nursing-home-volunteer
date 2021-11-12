@@ -1,13 +1,16 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import AppBlogPost from '../components/AppBlogPost.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
+import { config } from '../config'
 import { useBlogStore } from '../store/blog'
+import { trimPostDescription } from '../utils/strapi'
 
 const blogStore = useBlogStore()
 
 blogStore.fetchPosts()
 
-const excerptLength = ref(80)
+const getExcerpt = (description: string) =>
+  trimPostDescription(description, config.blog.excerptLength)
 </script>
 
 <template>
@@ -59,22 +62,16 @@ const excerptLength = ref(80)
           </div>
 
           <div v-else class="row">
-            <pre>{{ blogStore.posts }}</pre>
-            <!-- <b-card-group columns>
-              <BlogPost
-                v-for="post of blogPosts"
-                :key="post.id"
-                class="mb-5"
-                :title="post.title"
-                :excerpt="
-                  post.description.length > excerptLength
-                    ? `${post.description.slice(0, excerptLength)}...`
-                    : post.description
-                "
-                :src="post.featuredImage ? getStrapiMediaUrl(post.featuredImage.url) : ''"
-                :post-id="post.id"
-              />
-            </b-card-group> -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+              <div v-for="post of blogStore.posts" :key="post.id" class="col">
+                <AppBlogPost
+                  :src="post.featuredImage ? post.featuredImage.url : ''"
+                  :excerpt="getExcerpt(post.description)"
+                  :title="post.title"
+                  :href="`/blog/${post.id}`"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -83,21 +80,7 @@ const excerptLength = ref(80)
 </template>
 
 <style lang="scss" scoped>
-@import '../styles/bootstrap';
-
 .error-toggle {
   cursor: pointer;
-}
-
-@include media-breakpoint-down(md) {
-  .card-columns {
-    column-count: 2;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .card-columns {
-    column-count: 1;
-  }
 }
 </style>

@@ -9,4 +9,7 @@ export const config: IConfig = {
   api: {
     host: import.meta.env.VITE_APP_API_HOST ?? '',
   },
+  blog: {
+    excerptLength: 80,
+  },
 }
