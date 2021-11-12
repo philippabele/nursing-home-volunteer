@@ -5,7 +5,7 @@ import { navigate } from '../../utils/router'
 
 interface BButtonProps {
   href: string
-  color?: BootstrapColor
+  color?: BootstrapColor | 'link'
   disabled?: boolean
   size?: 'sm' | 'lg'
   icon?: string

@@ -19,6 +19,10 @@ const routes: RouteRecordRaw[] = [
         path: '',
         component: () => import('../views/BlogOverview.vue'),
       },
+      {
+        path: ':id',
+        component: () => import('../views/BlogPost.vue'),
+      },
     ],
   },
   // catch-all 404 route

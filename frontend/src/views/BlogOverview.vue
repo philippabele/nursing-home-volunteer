@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import AppBlogPost from '../components/AppBlogPost.vue'
+import BAlert from '../components/bootstrap/BAlert.vue'
+import BSpinner from '../components/bootstrap/BSpinner.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { config } from '../config'
 import { useBlogStore } from '../store/blog'
@@ -31,31 +33,14 @@ const getExcerpt = (description: string) =>
         </div>
 
         <div class="col-lg-9 mx-3 mx-md-0">
-          <div v-if="blogStore.isLoading" class="d-flex justify-content-center">
-            <div class="spinner-border text-primary" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
+          <BSpinner v-if="blogStore.isLoading" />
 
-          <div v-else-if="blogStore.error">
-            <div class="alert alert-danger" role="alert">
-              Beim Laden der Blogbeiträge ist ein Fehler aufgetreten.
-
-              <span
-                class="fw-bold error-toggle"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseBlogError"
-                aria-expanded="false"
-                aria-controls="collapseBlogError"
-              >
-                Details anzeigen
-              </span>
-
-              <div id="collapseBlogError" class="collapse">
-                <pre class="mb-0 mt-3">{{ blogStore.error }}</pre>
-              </div>
-            </div>
-          </div>
+          <BAlert
+            v-else-if="blogStore.error"
+            msg="Beim Laden der Blogbeiträge ist ein Fehler aufgetreten."
+            :details="blogStore.error.message"
+            color="danger"
+          />
 
           <div v-else-if="!blogStore.posts.length" class="alert alert-primary" role="alert">
             Aktuell gibt es keine Blogbeiträge.
@@ -77,8 +62,4 @@ const getExcerpt = (description: string) =>
   </AppLayoutDefault>
 </template>
 
-<style lang="scss" scoped>
-.error-toggle {
-  cursor: pointer;
-}
-</style>
+<style lang="scss" scoped></style>
