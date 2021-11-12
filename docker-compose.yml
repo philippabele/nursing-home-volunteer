@@ -23,6 +23,7 @@ services:
   postgres:
     image: postgres
     restart: always
+    # .env file includes db name, db username and password
     env_file: .env
     volumes:
       - ./db:/var/lib/postgresql/data
