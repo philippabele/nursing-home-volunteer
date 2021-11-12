@@ -23,6 +23,7 @@ services:
   postgres:
     image: postgres
     restart: always
+    env_file: .env
     volumes:
       - ./db:/var/lib/postgresql/data
 
