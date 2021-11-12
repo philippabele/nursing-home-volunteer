@@ -1,9 +1,11 @@
 <script lang="ts" setup>
+import arrowLeftIconUrl from 'bootstrap-icons/icons/arrow-left.svg'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import AppHero from '../components/AppHero.vue'
 import AppMediaSection from '../components/AppMediaSection.vue'
 import BAlert from '../components/bootstrap/BAlert.vue'
+import BButton from '../components/bootstrap/BButton.vue'
 import BSpinner from '../components/bootstrap/BSpinner.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { useBlogStore } from '../store/blog'
@@ -29,6 +31,10 @@ if (blogId !== -1) blogStore.fetchPost(blogId)
       />
 
       <div class="container py-6">
+        <BButton href="/blog" color="transparent" :icon="arrowLeftIconUrl" icon-pos="start"
+          >Zurück zum Blog</BButton
+        >
+
         <BAlert
           v-if="blogId === -1"
           msg="Die aufgerufene Beitrags-URL ist ungültig."

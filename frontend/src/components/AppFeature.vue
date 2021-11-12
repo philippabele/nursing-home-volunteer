@@ -26,6 +26,7 @@ defineProps<FeatureProps>()
       :href="btn.href"
       color="secondary"
       :icon="ChevronDoubleRightIconUrl"
+      icon-color="light"
     >
       {{ btn.text }}
     </BButton>

@@ -7,6 +7,7 @@ export type BootstrapColor =
   | 'info'
   | 'light'
   | 'dark'
+  | 'transparent'
 
 export interface IButton {
   text: string
