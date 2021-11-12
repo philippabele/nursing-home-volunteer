@@ -61,16 +61,14 @@ const getExcerpt = (description: string) =>
             Aktuell gibt es keine Blogbeiträge.
           </div>
 
-          <div v-else class="row">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-              <div v-for="post of blogStore.posts" :key="post.id" class="col">
-                <AppBlogPost
-                  :src="post.featuredImage ? post.featuredImage.url : ''"
-                  :excerpt="getExcerpt(post.description)"
-                  :title="post.title"
-                  :href="`/blog/${post.id}`"
-                />
-              </div>
+          <div v-else class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div v-for="post of blogStore.posts" :key="post.id" class="col">
+              <AppBlogPost
+                :src="post.featuredImage ? post.featuredImage.url : ''"
+                :excerpt="getExcerpt(post.description)"
+                :title="post.title"
+                :href="`/blog/${post.id}`"
+              />
             </div>
           </div>
         </div>
