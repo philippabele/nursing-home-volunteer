@@ -1,19 +1,18 @@
-### STAGE 1: Build ###
-FROM node:14.18-alpine as build
+# build stage
+FROM node:17-alpine3.12 as build-stage
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json .
 RUN npm install
 COPY . .
 RUN npm run build
 
-# Usage of nginx stage reduces final frontend docker image size by 400MB
-### STAGE 2: NGINX ###
+# production stage
 FROM nginx:stable-alpine
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 
-# copy nginx conf for SPA (single page application) that redirects non existing routes to root route
+COPY --from=build-stage /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
