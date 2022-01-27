@@ -38,7 +38,7 @@ const mediaType = computed((): string => props.media.mime.split('/')[0])
             v-if="mediaType === 'image'"
             :src="media.url"
             class="img-fluid rounded"
-            :alt="media.alternativeText"
+            :alt="media.alternativeText || media.caption"
           />
 
           <video v-else-if="mediaType === 'video'" controls controlsList="nodownload">

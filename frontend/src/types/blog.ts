@@ -12,11 +12,11 @@ export interface IMediaFormat {
 
 export interface IMedia extends IMediaFormat {
   id: number
-  alternativeText: string
+  alternativeText?: string
   caption: string
   created_at: string
   updated_at: string
-  formats: {
+  formats?: {
     small: IMediaFormat
     medium: IMediaFormat
     large: IMediaFormat

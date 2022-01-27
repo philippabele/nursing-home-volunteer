@@ -17,6 +17,7 @@ export const useBlogStore = defineStore('blog', {
 
       try {
         const { data } = await axiosInstance.get<IBlogPost[]>('blog-posts')
+        console.log(data)
 
         // strapi medai (images, videos etc.) urls are only relative paths, so add the api host here
         data.forEach((post) => {
