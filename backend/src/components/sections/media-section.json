@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_media_sections",
+  "info": {
+    "displayName": "Media Section",
+    "icon": "equals"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "featuredImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

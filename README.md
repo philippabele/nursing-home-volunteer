@@ -14,7 +14,11 @@ replace me with information about how we work and how someone could support this
 
 Make sure to Docker and docker-compose installed on your machine.
 
+<br>
+
 ## Setup with docker
+
+The backend does not yet work with docker!
 
 ### Step 1: Set database credentials
 

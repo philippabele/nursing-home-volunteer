@@ -5,7 +5,7 @@ services:
     # specify Dockerfile path
     build: ./backend
     image: nursing-home-volunteer/backend
-    restart: always
+    restart: unless-stopped
     # .env file includes db name, db username and password
     env_file: .env
     environment:
@@ -22,18 +22,16 @@ services:
 
   postgres:
     image: postgres
-    restart: always
+    restart: unless-stopped
     # .env file includes db name, db username and password
     env_file: .env
     volumes:
       - ./db:/var/lib/postgresql/data
 
   frontend:
-    build:
-      # specify Dockerfile path
-      context: ./frontend
-      args:
-        API_HOST: http://localhost:1337
+    # specify Dockerfile path
+    build: ./frontend
     image: nursing-home-volunteer/frontend
+    restart: unless-stopped
     ports:
       - '80:80'

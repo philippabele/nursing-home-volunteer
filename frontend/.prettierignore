@@ -1,5 +1,4 @@
 dist
 node_modules
-.nuxt
 .husky
-static
+package-lock.json
