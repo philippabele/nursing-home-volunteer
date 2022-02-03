@@ -22,7 +22,6 @@ export const useBlogStore = defineStore('blog', {
           `api/blog-posts?${blogPopulateQueryParam}`
         )
         const posts = data.data
-        console.log(posts)
 
         // strapi media (images, videos etc.) urls are only relative paths, so add the api host here
         posts.forEach((post) => {
