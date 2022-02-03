@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { IMedia } from '../types/blog'
+import { IMedia } from '../types/strapi'
 import { markdownToHtml } from '../utils/strings'
 
 interface MediaSectionProps {
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<MediaSectionProps>(), {
   layout: 'right',
 })
 
-const mediaType = computed((): string => props.media.mime.split('/')[0])
+const mediaType = computed((): string => props.media.data.attributes.mime.split('/')[0])
 </script>
 
 <template>
@@ -36,18 +36,18 @@ const mediaType = computed((): string => props.media.mime.split('/')[0])
         <div class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0">
           <img
             v-if="mediaType === 'image'"
-            :src="media.url"
+            :src="media.data.attributes.url"
             class="img-fluid rounded"
-            :alt="media.alternativeText || media.caption"
+            :alt="media.data.attributes.alternativeText || media.data.attributes.caption"
           />
 
           <video v-else-if="mediaType === 'video'" controls controlsList="nodownload">
-            <source :src="media.url" :type="media.mime" />
+            <source :src="media.data.attributes.url" :type="media.data.attributes.mime" />
             Dein Browser unterstützt das Videoformat nicht.
           </video>
 
           <audio v-else-if="mediaType === 'audio'" controls controlsList="nodownload">
-            <source :src="media.url" :type="media.mime" />
+            <source :src="media.data.attributes.url" :type="media.data.attributes.mime" />
             Dein Browser unterstützt das Audioformat nicht.
           </audio>
 

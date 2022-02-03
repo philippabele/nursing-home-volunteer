@@ -9,7 +9,7 @@ import BButton from '../components/bootstrap/BButton.vue'
 import BSpinner from '../components/bootstrap/BSpinner.vue'
 import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { useBlogStore } from '../store/blog'
-import { IBlogPost } from '../types/blog'
+import { IBlogPost } from '../types/strapi'
 import { markdownToHtml } from '../utils/strings'
 
 const { params } = useRoute()
@@ -25,8 +25,12 @@ if (blogId !== -1) blogStore.fetchPost(blogId)
   <AppLayoutDefault>
     <main>
       <AppHero
-        :src="post && post.featuredImage ? post.featuredImage.url : ''"
-        :title="post ? post.title : ''"
+        :src="
+          post && post.attributes.featuredImage
+            ? post.attributes.featuredImage.data.attributes.url
+            : ''
+        "
+        :title="post ? post.attributes.title : ''"
         :height="400"
       />
 
@@ -53,13 +57,13 @@ if (blogId !== -1) blogStore.fetchPost(blogId)
         <div
           v-else-if="post"
           class="text-center"
-          v-html="markdownToHtml(post ? post.description : '')"
+          v-html="markdownToHtml(post ? post.attributes.description : '')"
         ></div>
       </div>
 
-      <template v-if="post">
+      <template v-if="post && post.attributes.sections">
         <AppMediaSection
-          v-for="(section, index) of post.sections"
+          v-for="(section, index) of post.attributes.sections"
           :key="section.id"
           :title="section.title"
           :description="section.description"

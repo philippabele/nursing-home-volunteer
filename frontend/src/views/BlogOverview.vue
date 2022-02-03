@@ -49,9 +49,13 @@ const getExcerpt = (description: string) =>
           <div v-else class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
             <div v-for="post of blogStore.posts" :key="post.id" class="col">
               <AppBlogPost
-                :src="post.featuredImage ? post.featuredImage.url : ''"
-                :excerpt="getExcerpt(post.description)"
-                :title="post.title"
+                :src="
+                  post.attributes.featuredImage
+                    ? post.attributes.featuredImage.data.attributes.url
+                    : ''
+                "
+                :excerpt="getExcerpt(post.attributes.description)"
+                :title="post.attributes.title"
                 :href="`/blog/${post.id}`"
               />
             </div>

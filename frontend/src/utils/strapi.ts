@@ -1,5 +1,5 @@
 import { config } from '../config'
-import { IMedia } from '../types/blog'
+import { IMedia } from '../types/strapi'
 
 function removeTrailingSlash(str: string): string {
   return str.replace(/\/$/, '')
@@ -11,15 +11,18 @@ function addApiHostToMediaUrl(url: string): string {
 
 export function addApiHostToMedia(media: IMedia): IMedia {
   const clone = JSON.parse(JSON.stringify(media)) as IMedia
-  clone.url = addApiHostToMediaUrl(clone.url)
+  const attrs = clone.data.attributes
 
-  if (clone.formats) {
-    clone.formats.small.url = addApiHostToMediaUrl(clone.formats.small.url)
-    clone.formats.medium.url = addApiHostToMediaUrl(clone.formats.medium.url)
-    clone.formats.large.url = addApiHostToMediaUrl(clone.formats.large.url)
-    clone.formats.thumbnail.url = addApiHostToMediaUrl(clone.formats.thumbnail.url)
+  attrs.url = addApiHostToMediaUrl(attrs.url)
+
+  if (attrs.formats) {
+    attrs.formats.small.url = addApiHostToMediaUrl(attrs.formats.small.url)
+    attrs.formats.medium.url = addApiHostToMediaUrl(attrs.formats.medium.url)
+    attrs.formats.large.url = addApiHostToMediaUrl(attrs.formats.large.url)
+    attrs.formats.thumbnail.url = addApiHostToMediaUrl(attrs.formats.thumbnail.url)
   }
 
+  clone.data.attributes = attrs
   return clone
 }
 

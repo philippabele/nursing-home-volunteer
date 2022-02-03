@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 import axiosInstance from '../axios'
-import { IBlogPost } from '../types/blog'
+import { IBlogPost, StrapiResult } from '../types/strapi'
 import { addApiHostToMedia } from '../utils/strapi'
+
+const blogPopulateQueryParam = 'populate=featuredImage,sections,sections.media'
 
 export const useBlogStore = defineStore('blog', {
   state() {
@@ -16,18 +18,24 @@ export const useBlogStore = defineStore('blog', {
       this.isLoading = true
 
       try {
-        const { data } = await axiosInstance.get<IBlogPost[]>('blog-posts')
+        const { data } = await axiosInstance.get<StrapiResult<IBlogPost[]>>(
+          `api/blog-posts?${blogPopulateQueryParam}`
+        )
+        const posts = data.data
+        console.log(posts)
 
         // strapi media (images, videos etc.) urls are only relative paths, so add the api host here
-        data.forEach((post) => {
-          if (post.featuredImage) {
-            post.featuredImage = addApiHostToMedia(post.featuredImage)
+        posts.forEach((post) => {
+          if (post.attributes.featuredImage) {
+            post.attributes.featuredImage = addApiHostToMedia(post.attributes.featuredImage)
           }
 
-          post.sections.forEach((section) => (section.media = addApiHostToMedia(section.media)))
+          post.attributes.sections?.forEach(
+            (section) => (section.media = addApiHostToMedia(section.media))
+          )
         })
 
-        this.posts = data
+        this.posts = posts
       } catch (e) {
         console.error(e)
         this.error = e as Error
@@ -43,16 +51,21 @@ export const useBlogStore = defineStore('blog', {
       this.isLoading = true
 
       try {
-        const { data } = await axiosInstance.get<IBlogPost>(`blog-posts/${id}`)
+        const { data } = await axiosInstance.get<StrapiResult<IBlogPost>>(
+          `api/blog-posts/${id}?${blogPopulateQueryParam}`
+        )
+        const post = data.data
 
-        // strapi medai (images, videos etc.) urls are only relative paths, so add the api host here
-        if (data.featuredImage) {
-          data.featuredImage = addApiHostToMedia(data.featuredImage)
+        // strapi media (images, videos etc.) urls are only relative paths, so add the api host here
+        if (post.attributes.featuredImage) {
+          post.attributes.featuredImage = addApiHostToMedia(post.attributes.featuredImage)
         }
 
-        data.sections.forEach((section) => (section.media = addApiHostToMedia(section.media)))
+        post.attributes.sections?.forEach(
+          (section) => (section.media = addApiHostToMedia(section.media))
+        )
 
-        this.posts.push(data)
+        this.posts.push(post)
       } catch (e) {
         console.error(e)
         this.error = e as Error

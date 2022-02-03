@@ -9,10 +9,8 @@
     "title": {
       "type": "string"
     },
-    "featuredImage": {
-      "allowedTypes": [
-        "images"
-      ],
+    "media": {
+      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
       "required": true
