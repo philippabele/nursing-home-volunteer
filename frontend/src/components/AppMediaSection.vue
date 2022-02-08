@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<MediaSectionProps>(), {
   layout: 'right',
 })
 
-const mediaType = computed((): string => props.media.data.attributes.mime.split('/')[0])
+const mediaType = computed((): string => props.media.data?.attributes.mime.split('/')[0] ?? '')
 </script>
 
 <template>
@@ -33,7 +33,7 @@ const mediaType = computed((): string => props.media.data.attributes.mime.split(
           <div v-html="markdownToHtml(description)"></div>
         </div>
 
-        <div class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0">
+        <div v-if="media.data" class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0">
           <img
             v-if="mediaType === 'image'"
             :src="media.data.attributes.url"
