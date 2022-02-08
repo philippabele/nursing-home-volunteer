@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { IMedia } from '../types/strapi'
 import { markdownToHtml } from '../utils/strings'
-import VueEasyLightbox from 'vue-easy-lightbox'
 import AppLightboxImage from './AppLightboxImage.vue'
 
 interface MediaSectionProps {
@@ -18,7 +17,6 @@ const props = withDefaults(defineProps<MediaSectionProps>(), {
 })
 
 const mediaType = computed((): string => props.media.data?.attributes.mime.split('/')[0] ?? '')
-const isLightBoxVisible = ref(false)
 </script>
 
 <template>
