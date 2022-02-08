@@ -2,7 +2,8 @@
   "collectionName": "components_sections_media_sections",
   "info": {
     "displayName": "Media Section",
-    "icon": "equals"
+    "icon": "equals",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,10 +11,12 @@
       "type": "string"
     },
     "media": {
-      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "description": {
       "type": "richtext",
