@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="text-center">
-    <BAvatar size="100%" :src="avatar" :rounded="true" />
+    <BAvatar size="100%" :src="avatar" rounded />
 
     <p class="mb-0 font-weight-bolder">{{ name }}</p>
     <p class="m-0">{{ description }}</p>

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useRouter } from 'vue-router'
 import { stripMarkdown } from '../utils/strings'
 import BButton from './bootstrap/BButton.vue'
 
@@ -10,11 +11,13 @@ interface BlogPostProps {
 }
 
 defineProps<BlogPostProps>()
+
+const router = useRouter()
 </script>
 
 <template>
   <article class="card shadow-sm">
-    <img v-if="src" :src="src" class="card-img-top" :alt="title" />
+    <img v-if="src" :src="src" class="card-img-top" :alt="title" @click="router.push(href)" />
 
     <div class="card-body">
       <h3 class="card-title h4">{{ title }}</h3>
@@ -27,4 +30,8 @@ defineProps<BlogPostProps>()
   </article>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+img {
+  cursor: pointer;
+}
+</style>

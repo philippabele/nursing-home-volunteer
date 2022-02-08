@@ -5,6 +5,7 @@ import VueEasyLightbox from 'vue-easy-lightbox'
 interface MediaSectionProps {
   src: string
   alt: string
+  circle?: boolean
 }
 
 defineProps<MediaSectionProps>()
@@ -14,6 +15,13 @@ const isLightBoxVisible = ref(false)
 
 <template>
   <div>
+    <img
+      :src="src"
+      class="img-fluid"
+      :class="{ rounded: !circle, 'rounded-circle': circle }"
+      :alt="alt"
+      @click="isLightBoxVisible = true"
+    />
     <vue-easy-lightbox
       scroll-disabled
       move-disabled
@@ -21,7 +29,6 @@ const isLightBoxVisible = ref(false)
       :imgs="src"
       @hide="isLightBoxVisible = false"
     ></vue-easy-lightbox>
-    <img :src="src" class="img-fluid rounded" :alt="alt" @click="isLightBoxVisible = true" />
   </div>
 </template>
 
