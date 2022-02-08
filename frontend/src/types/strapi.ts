@@ -30,7 +30,7 @@ export interface IMedia {
         thumbnail: IMediaFormat
       }
     }
-  }
+  } | null
 }
 
 export interface IMediaSection {
@@ -46,7 +46,7 @@ export interface IBlogPost {
   attributes: {
     title: string
     description: string
-    featuredImage?: IMedia
+    featuredImage: IMedia
     sections?: IMediaSection[]
     published_at: string
     created_at: string

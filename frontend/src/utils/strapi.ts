@@ -11,6 +11,7 @@ function addApiHostToMediaUrl(url: string): string {
 
 export function addApiHostToMedia(media: IMedia): IMedia {
   const clone = JSON.parse(JSON.stringify(media)) as IMedia
+  if (!clone.data) return clone
   const attrs = clone.data.attributes
 
   attrs.url = addApiHostToMediaUrl(attrs.url)

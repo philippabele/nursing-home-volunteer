@@ -14,7 +14,7 @@ export function loggerPlugin(context: PiniaPluginContext): void {
     })
 
     console.log(
-      `Pinia state from store "${mutation.storeId}" changed, mutation type: ${mutation.type}\n`,
+      `🍍 State from store "${mutation.storeId}" changed, mutation type: ${mutation.type}\n`,
       changes
     )
   })

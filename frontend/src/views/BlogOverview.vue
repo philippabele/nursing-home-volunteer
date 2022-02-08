@@ -50,7 +50,7 @@ const getExcerpt = (description: string) =>
             <div v-for="post of blogStore.posts" :key="post.id" class="col">
               <AppBlogPost
                 :src="
-                  post.attributes.featuredImage
+                  post.attributes.featuredImage.data
                     ? post.attributes.featuredImage.data.attributes.url
                     : ''
                 "

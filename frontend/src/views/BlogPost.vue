@@ -26,7 +26,7 @@ if (blogId !== -1) blogStore.fetchPost(blogId)
     <main>
       <AppHero
         :src="
-          post && post.attributes.featuredImage
+          post && post.attributes.featuredImage.data
             ? post.attributes.featuredImage.data.attributes.url
             : ''
         "
