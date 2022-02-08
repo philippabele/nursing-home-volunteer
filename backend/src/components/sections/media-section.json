@@ -10,12 +10,22 @@
     "title": {
       "type": "string"
     },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "right"
+    },
     "media": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos",
+        "files"
       ]
     },
     "description": {
