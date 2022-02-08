@@ -56,7 +56,7 @@ if (blogId !== -1) blogStore.fetchPost(blogId)
 
         <div
           v-else-if="post"
-          class="text-center"
+          class="mt-4"
           v-html="markdownToHtml(post ? post.attributes.description : '')"
         ></div>
       </div>
