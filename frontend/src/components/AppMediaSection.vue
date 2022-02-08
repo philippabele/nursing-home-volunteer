@@ -62,8 +62,4 @@ const mediaType = computed((): string => props.media.data?.attributes.mime.split
 video {
   max-width: 100%;
 }
-
-img {
-  cursor: pointer;
-}
 </style>
