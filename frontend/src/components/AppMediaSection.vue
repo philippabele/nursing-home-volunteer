@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { IMedia } from '../types/strapi'
 import { markdownToHtml } from '../utils/strings'
+import VueEasyLightbox from 'vue-easy-lightbox'
+import AppLightboxImage from './AppLightboxImage.vue'
 
 interface MediaSectionProps {
   title?: string
@@ -16,6 +18,7 @@ const props = withDefaults(defineProps<MediaSectionProps>(), {
 })
 
 const mediaType = computed((): string => props.media.data?.attributes.mime.split('/')[0] ?? '')
+const isLightBoxVisible = ref(false)
 </script>
 
 <template>
@@ -34,10 +37,9 @@ const mediaType = computed((): string => props.media.data?.attributes.mime.split
         </div>
 
         <div v-if="media.data" class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0">
-          <img
+          <AppLightboxImage
             v-if="mediaType === 'image'"
             :src="media.data.attributes.url"
-            class="img-fluid rounded"
             :alt="media.data.attributes.alternativeText || media.data.attributes.caption"
           />
 
@@ -61,5 +63,9 @@ const mediaType = computed((): string => props.media.data?.attributes.mime.split
 <style scoped lang="scss">
 video {
   max-width: 100%;
+}
+
+img {
+  cursor: pointer;
 }
 </style>
