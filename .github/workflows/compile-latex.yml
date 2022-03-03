@@ -26,5 +26,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: main
-          path: ${{ env.working_directory }}/INF19B_Rickert_2858031_T3101.pdf
+          path: INF19B_Rickert_2858031_T3101.pdf
           if-no-files-found: error
