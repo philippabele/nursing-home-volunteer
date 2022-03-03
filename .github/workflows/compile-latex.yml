@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       working_directory: docs
+      pdf_name: INF19B_Rickert_2858031_T3101
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v2
@@ -21,10 +22,10 @@ jobs:
           root_file: main.tex
       - name: Rename main.pdf
         run: |
-          mv "$working_directory/main.pdf" "INF19B_Rickert_2858031_T3101.pdf"
+          mv "$working_directory/main.pdf" "$pdf_name.pdf"
       - name: Upload pdf artifact
         uses: actions/upload-artifact@v2
         with:
-          name: main
-          path: INF19B_Rickert_2858031_T3101.pdf
+          name: ${{ env.pdf_name }}
+          path: ${{ env.pdf_name }}.pdf
           if-no-files-found: error
