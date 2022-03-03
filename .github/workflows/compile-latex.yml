@@ -1,0 +1,30 @@
+name: Compile latex
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    env:
+      working_directory: docs
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: ${{ env.working_directory }}
+          root_file: main.tex
+      - name: Rename main.pdf
+        run: |
+          mv "$working_directory/main.pdf" "INF19B_Rickert_2858031_T3101.pdf"
+      - name: Upload pdf artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: main
+          path: ${{ env.working_directory }}/INF19B_Rickert_2858031_T3101.pdf
+          if-no-files-found: error
