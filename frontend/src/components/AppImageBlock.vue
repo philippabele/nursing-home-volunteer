@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import AppLightboxImage from './AppLightboxImage.vue'
+
 interface ImageBlockProps {
   src: string
   title: string
@@ -25,7 +27,7 @@ withDefaults(defineProps<ImageBlockProps>(), {
     </div>
 
     <div class="col-md-5 mt-4 mt-md-0">
-      <img :src="src" class="img-fluid mx-auto d-block" alt="Image" />
+      <AppLightboxImage :src="src" alt="Image" class="mx-auto" />
     </div>
   </div>
 </template>

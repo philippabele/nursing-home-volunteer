@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { IMedia } from '../types/strapi'
 import { markdownToHtml } from '../utils/strings'
 import BButton from './bootstrap/BButton.vue'
+import AppLightboxImage from './AppLightboxImage.vue'
 
 interface MediaSectionProps {
   title?: string
@@ -46,10 +47,9 @@ const mediaType = computed((): string => props.media.data?.attributes.mime.split
           v-if="media.data && mediaType !== 'application'"
           class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0"
         >
-          <img
+          <AppLightboxImage
             v-if="mediaType === 'image'"
             :src="media.data.attributes.url"
-            class="img-fluid rounded"
             :alt="media.data.attributes.alternativeText || media.data.attributes.caption"
           />
 
