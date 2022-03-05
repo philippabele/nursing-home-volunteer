@@ -2,18 +2,31 @@
   "collectionName": "components_sections_media_sections",
   "info": {
     "displayName": "Media Section",
-    "icon": "equals"
+    "icon": "equals",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "right"
+    },
     "media": {
-      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "files"
+      ]
     },
     "description": {
       "type": "richtext",

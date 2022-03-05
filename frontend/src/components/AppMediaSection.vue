@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { IMedia } from '../types/strapi'
 import { markdownToHtml } from '../utils/strings'
+import BButton from './bootstrap/BButton.vue'
 import AppLightboxImage from './AppLightboxImage.vue'
 
 interface MediaSectionProps {
@@ -24,17 +25,28 @@ const mediaType = computed((): string => props.media.data?.attributes.mime.split
     <div class="container">
       <div class="row align-items-center" :class="{ 'flex-row-reverse': layout === 'left' }">
         <div
-          class="col-lg-6"
           :class="{
             'pl-lg-5': layout === 'left',
             'pr-lg-5': layout === 'right',
+            'col-lg-6': media.data && mediaType !== 'application',
           }"
         >
           <h2 v-if="title">{{ title }}</h2>
           <div v-html="markdownToHtml(description)"></div>
+
+          <BButton
+            v-if="media.data && mediaType === 'application'"
+            class="mt-4"
+            :href="media.data.attributes.url"
+          >
+            Datei herunterladen
+          </BButton>
         </div>
 
-        <div v-if="media.data" class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0">
+        <div
+          v-if="media.data && mediaType !== 'application'"
+          class="col-lg-6 justify-content-lg-center d-flex mt-4 mt-lg-0"
+        >
           <AppLightboxImage
             v-if="mediaType === 'image'"
             :src="media.data.attributes.url"
