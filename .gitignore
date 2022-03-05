@@ -3,3 +3,7 @@
 db
 .DS_Store
 /.env
+docs/out
+
+# this is where to settings for the latex docker container sits:
+!.vscode
