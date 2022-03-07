@@ -53,7 +53,7 @@ Abbildung \ref{fig:store-definition} zeigt einen Vergleich desselben Codes in CS
 %
 \section{Vue}
 
-Für die Erstellung der Benutzeroberfläche (im Folgenden \glqq Frontend\grqq{} genannt) wird Vue verwendet. Vue ist ein progressives JavaScript-Framework, das die Frontend-Entwicklung vereinfachen soll. Progressiv bedeutet hierbei, das es für das gesamte Frontend oder auch nur für Teile dessen verwendet werden kann. Vue kann folglich mit anderen Technologien verwendet oder Schritt-für-Schritt (progressiv) in bereits vorhandene Projekte integriert werden \cite[vgl.][]{VueIntroduction}.
+Für die Erstellung der Benutzeroberfläche (im Folgenden \glqq Frontend\grqq{} genannt) wird Vue (Version 3.2) verwendet. Vue ist ein progressives JavaScript-Framework, das die Frontend-Entwicklung vereinfachen soll. Progressiv bedeutet hierbei, das es für das gesamte Frontend oder auch nur für Teile dessen verwendet werden kann. Vue kann folglich mit anderen Technologien verwendet oder Schritt-für-Schritt (progressiv) in bereits vorhandene Projekte integriert werden \cite[vgl.][]{VueIntroduction}.
 
 %
 % Vue - Grundlagen von Komponenten
@@ -88,7 +88,7 @@ Vue bietet mehrere Möglichkeiten, um eine Komponente zu definieren. Im Rahmen d
 In \acp{SFC} können standardmäßig die drei Sprach-Blöcke \lstinline{<template>} (HTML), \lstinline{<script>} (JavaScript) und \lstinline{<style>} (CSS) verwendet werden (siehe Abbildung \ref{fig:vue-example}), die den entsprechenden Code der Komponente beinhalten. Mit dem \lstinline{scoped}-Attribut des \lstinline{<style>}-Blocks kann das CSS für die Komponente gekapselt werden, d.h. es wird nur innerhalb der Komponente angewendet \cite[vgl.][]{VueSFC}.
 
 \textbf{TypeScript und Sass} \\
-Für die Entwicklung des Frontends sollen TypeScript und Sass verwendet werden, die bereits in Kapitel \ref{sec:typescript} und \ref{sec:sass} erläutert wurden. So soll sichergestellt werden, dass Fehler bereits während der Entwickler behoben werden können und ein robustes, wartbares Frontend entsteht.
+Für die Entwicklung des Frontends sollen TypeScript (Version 4.4) und Sass (Version 1.43) verwendet werden, die bereits in Kapitel \ref{sec:typescript} und \ref{sec:sass} erläutert wurden. So soll sichergestellt werden, dass Fehler bereits während der Entwickler behoben werden können und ein robustes, wartbares Frontend entsteht.
 
 Um TypeScript in einer \ac{SFC} verwenden zu können, muss der \lstinline{<script>}-Block (siehe Abbildung \ref{fig:vue-example}) um das Attribut \lstinline{lang="ts"} erweitert werden. Sass kann nach der Erweiterung des \lstinline{<style>}-Blocks um das Attribut \lstinline{lang="scss"} verwendet werden \cite[vgl.][]{VueSFC}.
 
@@ -119,8 +119,12 @@ Für weitere Funktionen bezüglich der Reaktivität sei auf \cite[vgl.][]{VueApi
 % Strapi CMS
 %
 \section{Strapi CMS}
+Strapi ist ein Open Source CMS, das in JavaScript geschrieben ist und vollständig anpassbar ist. Es soll die Entwicklung von APIs deutlich vereinfachen und kann selber gehostet werden. Dazu stellt es eine Benutzeroberfläche bereit, über die Inhaltstypen erstellt und verwaltet werden können. Anschließend sind diese durch REST oder GraphQL Endpunkte zugänglich \cite[vgl.][]{Strapi}.
+
+Im Rahmen dieser Studienarbeit wird Strapi als API (im Folgenden \glqq Backend\grqq{} genannt) verwendet, um Blogartikel zu verwalten. Eine detaillierte Betrachtung des CMS erfolgt in Kapitel \ref{sec:struktur-backend}.
 
 %
 % Heroku
 %
 \section{Heroku}
+TODO: Abwarten, ob vielleicht ein anderer Hoster verwendet wird.
