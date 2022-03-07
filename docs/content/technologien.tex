@@ -31,7 +31,7 @@ Bestehende JavaScript-Projekte können inkrementell auf TypeScript umgestellt we
 \section{Sass}
 Sass ist eine Stylesheet-Sprache, die zu CSS kompiliert wird. Sie vereinfacht die Verwendung von CSS, indem weitere Funktionen, wie z.B. Verschachtlung, bereitgestellt werden. Dabei ist sie vollständig zu CSS kompatibel, d.h. jeder CSS-Code ist gültiger Sass-Code \cite[vgl.][]{SassDocs}. Die erweiterten Funktionen helfen dabei robusten und wartbaren CSS-Code zu schreiben \cite[vgl.][]{SassDocs}.
 
-Im Rahmen dieser Studienarbeit wird Sass für den CSS-Code verwendet. Abbildung \ref{fig:store-definition} zeigt einen Vergleich desselben Codes in CSS und Sass. Durch die Verschachtlung bei Sass kann redundanter Code verhindert werden. Für Interessierte sei für weitere Funktionen auf \cite{SassGuide} verwiesen.
+Im Rahmen dieser Studienarbeit wird Sass verwendet. Abbildung \ref{fig:store-definition} zeigt einen Vergleich desselben Codes in CSS und Sass. Durch Sass kann hierbei redundanter Code verhindert werden. Für Interessierte sei für weitere Funktionen auf \cite{SassGuide} verwiesen.
 
 \begin{figure}[!htb]
   \begin{minipage}{0.48\textwidth}
@@ -63,22 +63,21 @@ Für die Erstellung der Benutzeroberfläche (im Folgenden \glqq Frontend\grqq{} 
 
 Vue-Komponenten erlauben die Unterteilung des Frontends in unabhängige, isolierte und wiederverwendbare Teile. So wird das Frontend in kleinere Komponenten gegliedert (siehe Abbildung \ref{fig:vue-components}), die dann die benötigte Logik kapseln und unabhängig entwickelt werden können \cite[vgl.][]{VueComponentBasics}.
 
-Vue bietet mehrere Möglichkeiten, um eine Komponente zu definieren. Im Rahmen dieser Studienarbeit werden sogenannte \aclu{SFC} (\acs{SFC}) verwendet. Jede Komponente wird hierbei in einer Datei mit der Dateiendung \lstinline{.vue} definiert \cite[vgl.][]{VueComponentBasics}.
+Vue bietet mehrere Möglichkeiten, um eine Komponente zu definieren. Im Rahmen dieser Studienarbeit werden sogenannte \aclu{SFC} (\acs{SFC}) verwendet (siehe Abbildung \ref{fig:vue-example}). Jede Komponente wird hierbei in einer Datei mit der Dateiendung \lstinline{.vue} definiert. Nachdem die Komponente in einer anderen Datei importiert wurde, kann sie wie ein herkömmliches HTML-Element verwendet werden (siehe Abbildung \ref{fig:vue-example-usage}) \cite[vgl.][]{VueComponentBasics}.
 
-\vspace{2\parskip}
-\begin{minipage}{\linewidth}
-  \begin{lstlisting}[language=java, frame=single, label=lst:vue-component, caption=Beispiel einer Vue \ac{SFC}]
-    <script setup>
-    import { ref } from 'vue'
+\begin{figure}[H]
+  \includegraphics[width=0.9\textwidth]{images/vue-example.png}
+  \centering
+  \caption[Beispiel einer Vue-Komponente]{Beispiel einer Vue \ac{SFC} \cite{VueComponentBasics}}
+  \label{fig:vue-example}
+\end{figure}
 
-    const count = ref(0)
-    </script>
-
-    <template>
-      <button @click="count++">You clicked me {{ count }} times.</button>
-    </template>
-  \end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+  \includegraphics[width=0.9\textwidth]{images/vue-example-usage.png}
+  \centering
+  \caption[Verwendung einer Vue-Komponente]{Verwendung einer Vue \ac{SFC} \cite[vgl.][]{VueComponentBasics}}
+  \label{fig:vue-example-usage}
+\end{figure}
 
 %
 % Strapi CMS
