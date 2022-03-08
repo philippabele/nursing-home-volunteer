@@ -101,6 +101,35 @@ Die Medienbereiche sind, wie in Abbildung \ref{fig:frontend-blogbeitrag} zu sehe
 %
 \subsection{Code-Struktur}
 
+Tabelle \ref{tbl:frontend-struktur} zeigt die hierarchische Code-Struktur des Frontends sowie die Funktionen der wesentlichen Verzeichnisse und Dateien.
+
+\begin{table}[ht!]
+  \begin{center}
+    \resizebox{0.9\textwidth}{!}{
+      \begin{tabular}{|l|l|}
+        \hline
+        Ordner / Datei  & Beschreibung                                                         \\ \hline
+        assets          & Bilder/Dateien, die im Frontend verwendet werden (außer Favicons)    \\ \hline
+        axios           & REST-Client zur Interaktion mit dem Backend                          \\ \hline
+        components      & Vue-Komponenten (\acp{SFC})                                          \\ \hline
+        \quad bootstrap & Komponenten, die mithilfe von Bootstrap erstellt wurden              \\ \hline
+        \quad layouts   & Layout- bzw. Struktur-Komponenten (z.B. Header, Hauptinhalt, Footer) \\ \hline
+        config          & Statische Konfiguration des Frontends (z.B. URL des Backends)        \\ \hline
+        router          & Vue Router zur Navigation zwischen den Seiten                        \\ \hline
+        store           & Globaler Zustand / Daten (z.B. Blogbeiträge)                         \\ \hline
+        styles          & Globales CSS / Sass                                                  \\ \hline
+        types           & TypeScript Typ-Definitionen                                          \\ \hline
+        utils           & Globale (wiederverwendbare) Funktionen                               \\ \hline
+        views           & Vue-Komponenten für die Seiten                                       \\ \hline
+        App.vue         & App-Komponente (Eintrittspunkt / Hauptkomponente des Frontends)      \\ \hline
+        
+      \end{tabular}
+    }
+    \caption[Beschreibung der wesentlichen Verzeichnisse und Dateien des Frontends]{Beschreibung der wesentlichen Verzeichnisse und Dateien des Frontends}
+    \label{tbl:frontend-struktur}
+  \end{center}
+\end{table}
+
 %
 % Frontend - Lokale Entwicklung
 %
