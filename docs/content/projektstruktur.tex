@@ -1,6 +1,110 @@
 \chapter{Projektstruktur}
 
+%
+% Frontend
+%
 \section{Frontend}
+Das Frontend besteht aus insgesamt vier Seiten, die im Folgenden näher betrachtet werden sollen. Dabei wird lediglich auf die Seiten als Ganzes und nicht auf jede individuelle Komponente eingegangen. Es sei angemerkt, dass im aktuellen Entwicklungsstand der Studienarbeit Platzhalter für Texte, Bilder etc. verwendet werden, da konkrete Inhalte noch nicht feststehen.
+
+%
+% Frontend - Startseite
+%
+\subsection{Startseite}
+
+Abbildung \ref{fig:frontend-homepage-1} und \ref{fig:frontend-homepage-2} zeigen die Startseite des Frontends. Am Anfang der Seite befindet sich ein großflächiges Bild, das die Aufmerksamkeit des Nutzers anziehen soll. Im Folgenden werden dann die Angebote beschrieben, die die Pflegeeinrichtung anbietet sowie Zitate von Erfahrungsberichten dargestellt. Am Ende der Seite befinden sich Bilder und Daten zum Team und Partner der Pflegeeinrichtung, wodurch eine persönliche Bindung zum Besucher hergestellt werden soll.
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.9\textwidth]{images/frontend-homepage-1.jpg}}
+  \centering
+  \caption[Startseite des Frontends Teil 1]{Startseite des Frontends Teil 1}
+  \label{fig:frontend-homepage-1}
+\end{figure}
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.9\textwidth]{images/frontend-homepage-2.jpg}}
+  \centering
+  \caption[Startseite des Frontends Teil 2]{Startseite des Frontends Teil 2}
+  \label{fig:frontend-homepage-2}
+\end{figure}
+
+%
+% Frontend - Landing page
+%
+\subsection{Landing page}
+
+Die zweite Seite des Frontends ist die sogenannte landing page (siehe Abbildung \ref{fig:frontend-landing-page-1} und \ref{fig:frontend-landing-page-2}), die über die Route \lstinline{/landing-page} erreichbar ist. Diese Seite soll kurz und knapp die wichtigsten Informationen über das Angebot der Pflegeeinrichtung darstellen. Die landing page kann z.B. an Interessierte weitergeleitet werden, um diesen einen vollständigen und kompakten Überblick über alle Angebote zu geben. Alternativ kann diese Seite als Austausch für die Startseite verwendet werden, sollte dieser Wunsch seitens der Pflegeeinrichtung bestehen.
+
+Hervorzuheben ist der interaktive Kopfbereich der Seite, indem der Besucher durch drei verschiedene Ansichten wechseln kann. In Abbildung \ref{fig:frontend-landing-page-1} ist der Hintergrund zwar lediglich grau, jedoch kann für jede Ansicht ein individuelles Hintergrundbild eingefügt werden, um die Seite ansprechender zu gestalten.
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.85\textwidth]{images/frontend-landing-page-1.jpg}}
+  \centering
+  \caption[Landing page des Frontends Teil 1]{Landing page des Frontends Teil 1}
+  \label{fig:frontend-landing-page-1}
+\end{figure}
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.9\textwidth]{images/frontend-landing-page-2.jpg}}
+  \centering
+  \caption[Landing page des Frontends Teil 2]{Landing page des Frontends Teil 2}
+  \label{fig:frontend-landing-page-2}
+\end{figure}
+
+%
+% Frontend - Blog
+%
+\subsection{Blog}
+
+Der Blog ist die zentrale Stelle für die Ansicht aller Beiträge der Pflegeeinrichtung und ist über die Route \lstinline{/blog} erreichbar. Dabei werden alle verfügbaren Blogbeiträge vom Backend abgerufen und eine Vorschau dieser angezeigt. Ein Klick auf das Bild oder auf die \glqq Weiterlesen\grqq{}-Schaltfläche führt auf die Detailseite des Blogbeitrags.
+
+Links neben den Blogbeiträgen befindet sich ein Platzhalter für Filtermöglichkeiten. Zum aktuellen Entwicklungsstand der Studienarbeit sind die Anforderungen für die Filter seitens der Pflegeeinrichtung noch nicht bekannt. Daher sind diese nicht implementiert.
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.9\textwidth]{images/frontend-blog.jpg}}
+  \centering
+  \caption[Blog des Frontends]{Blog des Frontends}
+  \label{fig:frontend-blog}
+\end{figure}
+
+%
+% Frontend - Blogbeitrag
+%
+\subsection{Blogbeitrag}
+
+Nach dem Öffnen eines Beitrags im Blog oder durch manuellen Aufruf der URL, gelangt der Besucher auf die Detailseite für einen Blogbeitrag (siehe Abbildung \ref{fig:frontend-blogbeitrag}). Jeder Beitrag ist über die Route \lstinline{/blog/<id>} erreichbar, wobei \lstinline{<id>} durch die eindeutige ID des Beitrags ersetzt werden muss. Beim Aufruf der Seite wird der Blogbeitrag vom Backend abgerufen, falls dieser nicht bereits geladen wurde.
+
+Ein Blogbeitrag besteht aus insgesamt vier Komponenten: Titel, Bild (optional), Beschreibung und beliebig vielen Medienbereichen.
+
+Die Medienbereiche sind, wie in Abbildung \ref{fig:frontend-blogbeitrag} zu sehen, voneinander getrennte Abschnitte, die mindestens eine Beschreibung bzw. Text beinhalten. Der Titel sowie das Medium sind optional. Diese Bereiche können dazu verwendet werden, um den Blogbeitrag inhaltlich zu gliedern sowie mit weiteren Medien zu erweitern. Mögliche Medientypen sind Bilder, Videos, Audiodateien sowie sonstige Dateien (PDFs, Textdateien etc.).
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.85\textwidth]{images/frontend-blogbeitrag.jpg}}
+  \centering
+  \caption[Blogbeitrag des Frontends]{Blogbeitrag des Frontends}
+  \label{fig:frontend-blogbeitrag}
+\end{figure}
+
+%
+% Frontend - Code-Struktur
+%
+\subsection{Code-Struktur}
+
+%
+% Frontend - Lokale Entwicklung
+%
+\subsection{Lokale Entwicklung}
 
 \section{Backend}
 \label{sec:struktur-backend}
