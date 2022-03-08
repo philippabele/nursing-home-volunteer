@@ -113,7 +113,7 @@ In Abbildung \ref{fig:vue-example} wird bereits die Composition API verwendet. I
 \subsection{Reaktivität}
 Vue stellt mehrere Funktion zum Erstellen von reaktiven Variablen bereit. In Abbildung \ref{fig:vue-example} wurde bereits die Funktion \lstinline{ref} verwendet, die einen Wert reaktiv macht \cite[vgl.][]{VueApiReactiveCore}. Wird ein reaktiver Wert z.B. im \lstinline{<template>}-Block der Komponente verwendet, aktualisiert Vue automatisch den HTML-Code, wenn sich der Wert ändert \cite[vgl.][]{VueReactiveFundamentals}. Würde man also in Abbildung \ref{fig:vue-example} \glqq \lstinline{const count = ref(0)}\grqq{} durch \glqq \lstinline{const count = 0}\grqq{} ersetzen, würde im HTML-Code selbst bei einer Änderungen des Wertes immer \glqq \lstinline{You clicked me 0 times.}\grqq{} angezeigt werden, da \lstinline{count} dann nicht mehr reaktiv ist.
 
-Für weitere Funktionen bezüglich der Reaktivität sei auf \cite[vgl.][]{VueApiReactiveCore} verwiesen.
+Für weitere Funktionen bezüglich der Reaktivität sei für Interessierte auf \cite{VueApiReactiveCore} verwiesen. Für detaillierte Informationen über Vue empfiehlt sich die offizielle Dokumentation, die unter \cite{VueIntroduction} zu finden ist.
 
 %
 % Strapi CMS
