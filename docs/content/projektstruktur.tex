@@ -141,3 +141,32 @@ Um das Frontend für den Produktivbetrieb zu kompilieren, muss der Befehl \glqq 
 
 \section{Backend}
 \label{sec:struktur-backend}
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.9\textwidth]{images/backend-dashboard.jpg}}
+  \centering
+  \caption[Dashboard des Backends]{Dashboard des Backends}
+  \label{fig:backend-dashboard}
+\end{figure}
+
+Abbildung \ref{fig:backend-dashboard} zeigt das Dashboard bzw. die Startseite des Backends, das über die Route \lstinline{/admin} erreichbar ist. Unter dem Menüpunkt \glqq Content-Type Builder\grqq{} können über die Benutzeroberfläche Inhaltstypen angelegt werden, die dann über die API zugänglich sind (siehe Abbildung \ref{fig:backend-content-type-builder}). Im Rahmen dieser Studienarbeit wurde ein Inhaltstype \glqq Blog Post\grqq{} angelegt, der das Erstellen von Blogbeiträgen ermöglicht. Die Inhaltstypen können lediglich während der Entwicklung geändert werden. Im Produktivbetrieb ist dies nicht mehr möglich.
+
+Die konkreten Inhalte für den Inhaltstyp, d.h. die Blogbeiträge können anschließend unter dem Menüpunkt \glqq Content Manager\grqq{} verwaltet werden.
+
+\begin{figure}[H]
+  \setlength{\fboxsep}{0pt}
+  \setlength{\fboxrule}{0.5pt}
+  \fbox{\includegraphics[width=0.9\textwidth]{images/backend-content-type-builder.jpg}}
+  \centering
+  \caption[Inhaltstyp für die Blogbeiträge]{Inhaltstyp für die Blogbeiträge}
+  \label{fig:backend-content-type-builder}
+\end{figure}
+
+\textbf{Lokale Entwicklung} \\
+So wie bei der lokalen Entwicklung des Frontends muss zuerst ein Kommandozeilen-Fenster und darin der Pfad zu den Dateien des Backends geöffnet werden. Anschließend müssen ebenfalls die Abhängigkeiten bzw. Pakete, die das Backend verwendet mit \glqq \lstinline{npm install}\grqq{} installiert werden.
+
+Für die lokale Entwicklung des Backends kann dieses mit \glqq \lstinline{npm run develop}\grqq{} gestartet werden. Für den Produktivbetrieb muss es zuerst mit \glqq \lstinline{npm run build}\grqq{} kompiliert und danach mit \glqq \lstinline{npm start}\grqq{} gestartet werden.
+
+Für weitere Informationen über Strapi sei für Interessierte auf \cite{Strapi} verwiesen.
