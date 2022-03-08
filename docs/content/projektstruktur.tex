@@ -135,5 +135,9 @@ Tabelle \ref{tbl:frontend-struktur} zeigt die hierarchische Code-Struktur des Fr
 %
 \subsection{Lokale Entwicklung}
 
+Details zur lokalen Entwicklung des Frontends befinden sich in der Datei \glqq \lstinline{frontend/README.md}\grqq{}. Nachdem ein Kommandozeilen-Fenster geöffnet und der Pfad zu den Dateien des Frontends geöffnet wurde, muss zuerst durch den Befehl \glqq \lstinline{npm install}\grqq{} die Abhängigkeiten bzw. Pakete installiert werden, die das Frontend verwendet. Anschließend kann das Frontend durch \glqq \lstinline{npm run dev}\grqq{} für die Entwicklung gestartet werden, wodurch es unter der URL \glqq \lstinline{http://localhost:3000}\grqq{} zur Verfügung steht. Bei Änderungen am Code wird die Seite automatisch aktualisiert.
+
+Um das Frontend für den Produktivbetrieb zu kompilieren, muss der Befehl \glqq \lstinline{npm run build}\grqq{} verwendet werden. Hierdurch wird ein \glqq \lstinline{dist}\grqq{}-Ordner erstellt, der die kompilierten statischen Dateien des Frontends beinhaltet.
+
 \section{Backend}
 \label{sec:struktur-backend}
