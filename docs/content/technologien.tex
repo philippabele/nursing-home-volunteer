@@ -94,7 +94,7 @@ Vue bietet mehrere Möglichkeiten, um eine Komponente zu definieren. Im Rahmen d
 In \acp{SFC} können standardmäßig die drei Sprach-Blöcke \lstinline{<template>} (HTML), \lstinline{<script>} (JavaScript) und \lstinline{<style>} (CSS) verwendet werden (siehe Abbildung \ref{fig:vue-example}), die den entsprechenden Code der Komponente beinhalten. Mit dem \lstinline{scoped}-Attribut des \lstinline{<style>}-Blocks kann das CSS für die Komponente gekapselt werden, d.h. es wird nur innerhalb der Komponente angewendet \cite[vgl.][]{VueSFC}.
 
 \textbf{TypeScript und Sass} \\
-Für die Entwicklung des Frontends sollen TypeScript (Version 4.4) und Sass (Version 1.43) verwendet werden, die bereits in Kapitel \ref{sec:typescript} und \ref{sec:sass} erläutert wurden. So soll sichergestellt werden, dass Fehler bereits während der Entwickler behoben werden können und ein robustes, wartbares Frontend entsteht.
+Für die Entwicklung des Frontends sollen TypeScript (Version 4.4) und Sass (Version 1.43) verwendet werden, die bereits in Kapitel \ref{sec:typescript} und \ref{sec:sass} erläutert wurden. So soll sichergestellt werden, dass Fehler bereits während der Entwicklung behoben werden können und ein robustes, wartbares Frontend entsteht.
 
 Um TypeScript in einer \ac{SFC} verwenden zu können, muss der \lstinline{<script>}-Block (siehe Abbildung \ref{fig:vue-example}) um das Attribut \lstinline{lang="ts"} erweitert werden. Sass kann nach der Erweiterung des \lstinline{<style>}-Blocks um das Attribut \lstinline{lang="scss"} verwendet werden \cite[vgl.][]{VueSFC}.
 
@@ -117,7 +117,7 @@ In Abbildung \ref{fig:vue-example} wird bereits die Composition API verwendet. I
 % Vue - Reaktivität
 %
 \subsection{Reaktivität}
-Vue stellt mehrere Funktion zum Erstellen von reaktiven Variablen bereit. In Abbildung \ref{fig:vue-example} wurde bereits die Funktion \lstinline{ref} verwendet, die einen Wert reaktiv macht \cite[vgl.][]{VueApiReactiveCore}. Wird ein reaktiver Wert z.B. im \lstinline{<template>}-Block der Komponente verwendet, aktualisiert Vue automatisch den HTML-Code, wenn sich der Wert ändert \cite[vgl.][]{VueReactiveFundamentals}. Würde man also in Abbildung \ref{fig:vue-example} \glqq \lstinline{const count = ref(0)}\grqq{} durch \glqq \lstinline{const count = 0}\grqq{} ersetzen, würde im HTML-Code selbst bei einer Änderungen des Wertes immer \glqq \lstinline{You clicked me 0 times.}\grqq{} angezeigt werden, da \lstinline{count} dann nicht mehr reaktiv ist.
+Vue stellt mehrere Funktionen zum Erstellen von reaktiven Variablen bereit. In Abbildung \ref{fig:vue-example} wurde bereits die Funktion \lstinline{ref} verwendet, die einen Wert reaktiv macht \cite[vgl.][]{VueApiReactiveCore}. Wird ein reaktiver Wert z.B. im \lstinline{<template>}-Block der Komponente verwendet, aktualisiert Vue automatisch den HTML-Code, wenn sich der Wert ändert \cite[vgl.][]{VueReactiveFundamentals}. Würde man also in Abbildung \ref{fig:vue-example} \glqq \lstinline{const count = ref(0)}\grqq{} durch \glqq \lstinline{const count = 0}\grqq{} ersetzen, würde im HTML-Code selbst bei einer Änderungen des Wertes immer \glqq \lstinline{You clicked me 0 times.}\grqq{} angezeigt werden, da \lstinline{count} dann nicht mehr reaktiv ist.
 
 Für weitere Funktionen bezüglich der Reaktivität sei für Interessierte auf \cite{VueApiReactiveCore} verwiesen. Für detaillierte Informationen über Vue empfiehlt sich die offizielle Dokumentation, die unter \cite{VueIntroduction} zu finden ist.
 
