@@ -19,6 +19,8 @@ services:
       - '1337:1337'
     depends_on:
       - postgres
+    volumes:
+      - ./backend/public/uploads:/usr/src/app/public/uploads
 
   postgres:
     image: postgres
