@@ -7,6 +7,7 @@ npm-debug.log
 build
 .cache
 .tmp
+.env
 
 public/uploads/*
 !public/uploads/.gitkeep
