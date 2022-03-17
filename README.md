@@ -18,8 +18,6 @@ Make sure to Docker and docker-compose installed on your machine.
 
 ## Setup with docker
 
-The backend does not yet work with docker!
-
 ### Step 1: Set database credentials
 
 - Copy `.env.template` file, rename it to `.env` and change the database credentials to whatever to like, e.g.:
