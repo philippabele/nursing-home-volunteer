@@ -20,17 +20,31 @@ Make sure to Docker and docker-compose installed on your machine.
 
 ### Step 1: Set database credentials
 
-- Copy `.env.example` file, rename it to `.env` and change the database credentials to whatever to like, e.g.:
-
-```
-POSTGRES_DB=strapi
-POSTGRES_USER=strapi
-POSTGRES_PASSWORD=strapi
-```
+- Copy `.env.example` file, rename it to `.env` and change the database credentials to whatever to like.
 
 The .env file is added to .gitignore and should NOT BE CHECKED IN TO GIT!
 
-### Step 2: Start database, backend and frontend for production
+### Step 2: Change docker-compose.yml if running locally
+
+The `docker-compose.yml` is configured to be deployed on a linux server (see `/docs`). If you want to run the applications locally and not in the context of the server, you have to make the following changes to `docker-compose.yml`:
+
+1. Remove `networks` definition
+2. Add port bindings
+   For strapi:
+
+   ```
+   ports:
+     - '1337:1337'
+   ```
+
+   For frontend:
+
+   ```
+   ports:
+     - '80:80'
+   ```
+
+### Step 3: Start database, backend and frontend for production
 
 ```bash
 # Start backend, db and frontend with docker locally
