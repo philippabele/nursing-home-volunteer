@@ -19,6 +19,8 @@ services:
       - '1337:1337'
     depends_on:
       - postgres
+    volumes:
+      - ./docker-data/uploads:/usr/src/app/public/uploads
 
   postgres:
     image: postgres
@@ -26,7 +28,7 @@ services:
     # .env file includes db name, db username and password
     env_file: .env
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./docker-data/db:/var/lib/postgresql/data
 
   frontend:
     # specify Dockerfile path

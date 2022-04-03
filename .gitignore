@@ -1,6 +1,6 @@
 .vscode
 .idea
-db
+/docker-data
 .DS_Store
 /.env
 docs/out
