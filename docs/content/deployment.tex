@@ -68,17 +68,36 @@ Nach der Installation von Docker und docker-compose muss der nginx-proxy selbst 
 Der nginx-proxy ist dafür zuständig, jede Docker-Anwendung, die die Umgebungsvariablen \lstinline{VIRTUAL_HOST} und \lstinline{LETSENCRYPT_HOST} gesetzt hat, über ebendiesen host/Domain zur Verfügung zu stellen. Dabei verwaltet er automatisch SSL-Zertifikate von Let's Encrypt, um die Verbindung über SSL zu verschlüsseln \cite{NginxProxyInstallation}.
 
 \section{Starten des Front- und Backends}
-Um nun das Front- und Backend dieser Studienarbeit bereitzustellen, muss zuerst mit \lstinline{git clone https://github.com/philippabele/nursing-home-volunteer.git} der Code von GitHub heruntergeladen werden.
+\label{sec:start-applications}
+Um nun das Front- und Backend dieser Studienarbeit bereitzustellen, muss zuerst mit
+
+\begin{center}
+  \lstinline{git clone https://github.com/philippabele/nursing-home-volunteer.git}
+\end{center}
+
+der Code von GitHub heruntergeladen werden.
 
 Danach muss die Datei \lstinline{.env.example} kopiert und in \lstinline{.env} umbenannt werden. Diese Datei enthält alle sensiblen Umgebungsvariablen für den Betrieb der beiden Anwendungen. Diese sollten niemals öffentlich geteilt werden. Nach dem Anlegen der \lstinline{.env} Datei sollten die Werte der Umgebungsvariablen entsprechend geändert werden.
 
-Nun kann das Front- und Backend durch \lstinline{docker-compose up -d} gestartet werden. Der zuvor eingerichtete nginx-proxy erkennt die beiden Anwendungen automatisch und stellt sie entsprechend über die \lstinline{FRONTEND_DOMAIN} und \lstinline{BACKEND_DOMAIN} bereit, die in der \lstinline{.env} Datei eingetragen wurden. Es sei angemerkt, dass die Anforderung der SSL-Zertifikate für die Domains ein paar Sekunden dauern kann, sodass direkt nach dem Starten eine Fehlermeldung des Browser erscheinen kann, dass die SSL-Zertifikate nicht gültig sind.
+Nun kann das Front- und Backend durch
 
-Sollten neue Änderungen für die Anwendungen verfügbar, d.h. der Code auf GitHub geändert worden sein, können sie mit \lstinline{git pull && docker-compose up -d --build} aktualisiert werden.
+\begin{center}
+  \lstinline{docker-compose up -d}
+\end{center}
+
+gestartet werden. Der zuvor eingerichtete nginx-proxy erkennt die beiden Anwendungen automatisch und stellt sie entsprechend über die \lstinline{FRONTEND_DOMAIN} und \lstinline{BACKEND_DOMAIN} bereit, die in der \lstinline{.env} Datei eingetragen wurden. Es sei angemerkt, dass die Anforderung der SSL-Zertifikate für die Domains ein paar Sekunden dauern kann, sodass direkt nach dem Starten eine Fehlermeldung des Browser erscheinen kann, dass die SSL-Zertifikate nicht gültig sind.
+
+Sollten neue Änderungen für die Anwendungen verfügbar, d.h. der Code auf GitHub geändert worden sein, können sie mit
+
+\begin{center}
+  \lstinline{git pull && docker-compose up -d --build}
+\end{center}
+
+aktualisiert werden.
 
 \section{Datensicherung und Umzug auf einen anderen Server}
 Sollte der Bedarf für eine vollständige Datensicherung der Anwendungen bestehen oder diese z.B. auf einen anderen \ac{VPS} umgezogen werden sollen, ist dies durch die Verwendung von Docker benutzerfreundlich möglich.
 
-Um die Daten der beiden Anwendungen vollständig zu sichern, muss lediglich der Order \lstinline{docker-data} und die Datei \lstinline{.env} gesichert werden. \lstinline{docker-data} wird hierbei beim Start der Anwendungen (\lstinline{docker-compose up -d}) erstellt und persistiert die Datenbank des Backends sowie alle hochgeladenen Medien. Das Frontend besteht lediglich aus statischen kompilierten Dateien, sodass dieses nicht gesichert werden muss.
+Um die Daten der beiden Anwendungen vollständig zu sichern, muss lediglich der Order \lstinline{docker-data} und die Datei \lstinline{.env} gesichert werden. \lstinline{docker-data} wird hierbei beim Start der Anwendungen mit docker-compose erstellt und persistiert die Datenbank des Backends sowie alle hochgeladenen Medien. Das Frontend besteht lediglich aus statischen kompilierten Dateien, sodass dieses nicht gesichert werden muss.
 
-Bei einem Umzug auf einen anderen \ac{VPS} muss die in diesem Kapitel beschriebene Einrichtung des Servers (inkl. Docker, docker-compose und nginx-proxy) sowie der Domain durchgeführt werden. Anschließend können die gesicherten Daten (\lstinline{docker-data} und \lstinline{.env}) auf den neuen Server kopiert und die Anwendungen mit \lstinline{docker-compose up -d} gestartet werden.
+Bei einem Umzug auf einen anderen \ac{VPS} muss die in diesem Kapitel beschriebene Einrichtung des Servers (inkl. Docker, docker-compose und nginx-proxy) sowie der Domain durchgeführt werden. Anschließend können die gesicherten Daten (\lstinline{docker-data} und \lstinline{.env}) auf den neuen Server kopiert und die Anwendungen, wie in Kapitel \ref{sec:start-applications} beschrieben, gestartet werden.
