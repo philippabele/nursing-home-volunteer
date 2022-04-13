@@ -63,7 +63,7 @@ Um die Installation zu vereinfachen kann auch das Skript unter \lstinline{https:
 Dazu muss die genannte Datei auf den \ac{VPS} kopiert werden und mit \lstinline{bash ./install-docker-ubuntu.sh} ausgeführt werden.
 
 \subsection{Installation des nginx-proxy}
-Nach der Installation von Docker und docker-compose muss der nginx-proxy selbst installiert werden. Dazu kann die Installationsanleitung unter \cite{NginxProxyInstallation} (\lstinline{https://github.com/larsrickert/nginx-proxy}) verwendet werden.
+Nach der Installation von Docker und docker-compose muss der nginx-proxy selbst installiert werden. Dazu kann die Installationsanleitung unter \cite{NginxProxyInstallation} (\lstinline{https://nginxproxy.lars-rickert.de/guide/getting-started.html}) verwendet werden.
 
 Der nginx-proxy ist dafür zuständig, jede Docker-Anwendung, die die Umgebungsvariablen \lstinline{VIRTUAL_HOST} und \lstinline{LETSENCRYPT_HOST} gesetzt hat, über ebendiesen host/Domain zur Verfügung zu stellen. Dabei verwaltet er automatisch SSL-Zertifikate von Let's Encrypt, um die Verbindung über SSL zu verschlüsseln \cite{NginxProxyInstallation}.
 
