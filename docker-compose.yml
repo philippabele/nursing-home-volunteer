@@ -1,13 +1,12 @@
+# The applications are deployed on a linux server using the nginx-proxy from:
+# https://github.com/larsrickert/nginx-proxy
 version: '3'
 
 services:
   strapi:
-    # specify Dockerfile path
     build: ./backend
     image: nursing-home-volunteer/backend
-    restart: unless-stopped
-    # .env file includes db name, db username and password
-    env_file: .env
+    restart: always
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_HOST: postgres
@@ -15,8 +14,10 @@ services:
       DATABASE_NAME: '${POSTGRES_DB}'
       DATABASE_USERNAME: '${POSTGRES_USER}'
       DATABASE_PASSWORD: '${POSTGRES_PASSWORD}'
-    ports:
-      - '1337:1337'
+      VIRTUAL_HOST: '${BACKEND_DOMAIN}'
+      LETSENCRYPT_HOST: '${BACKEND_DOMAIN}'
+    expose:
+      - 1337
     depends_on:
       - postgres
     volumes:
@@ -24,16 +25,26 @@ services:
 
   postgres:
     image: postgres
-    restart: unless-stopped
+    restart: always
     # .env file includes db name, db username and password
     env_file: .env
     volumes:
       - ./docker-data/db:/var/lib/postgresql/data
 
   frontend:
-    # specify Dockerfile path
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        VITE_APP_API_HOST: 'https://${BACKEND_DOMAIN}'
     image: nursing-home-volunteer/frontend
-    restart: unless-stopped
-    ports:
-      - '80:80'
+    restart: always
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: '${FRONTEND_DOMAIN}'
+      LETSENCRYPT_HOST: '${FRONTEND_DOMAIN}'
+
+networks:
+  default:
+    name: nginx-proxy
+    external: true
