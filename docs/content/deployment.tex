@@ -71,7 +71,7 @@ ausgeführt werden.
 \subsection{Installation des nginx-proxy}
 Nach der Installation von Docker und docker-compose muss der nginx-proxy selbst installiert werden. Dazu kann die Installationsanleitung unter \cite{NginxProxyInstallation} (\lstinline{https://nginxproxy.lars-rickert.de/guide/getting-started.html}) verwendet werden.
 
-Der nginx-proxy ist dafür zuständig, jede Docker-Anwendung, die die Umgebungsvariablen \lstinline{VIRTUAL_HOST} und \lstinline{LETSENCRYPT_HOST} gesetzt hat, über ebendiesen host/Domain zur Verfügung zu stellen. Dabei verwaltet er automatisch SSL-Zertifikate von Let's Encrypt, um die Verbindung über SSL zu verschlüsseln \cite{NginxProxyInstallation}.
+Der nginx-proxy ist dafür zuständig, jede Docker-Anwendung, die die Umgebungsvariablen \lstinline{VIRTUAL_HOST} und \lstinline{LETSENCRYPT_HOST} gesetzt hat, über ebendiesen host/Domain zur Verfügung zu stellen. Dabei verwaltet er automatisch SSL-Zertifikate von Let's Encrypt, um die Verbindung über SSL zu verschlüsseln \cite{NginxProxyDeployment}. Dies ist für das Front- und Backend bereits in der \lstinline{docker-compose.yml} realisiert, sodass lediglich die Domain in der \lstinline{.env} Datei eingetragen werden muss (siehe Kapitel \ref{sec:start-applications}).
 
 \section{Starten des Front- und Backends}
 \label{sec:start-applications}
