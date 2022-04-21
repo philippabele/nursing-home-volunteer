@@ -101,6 +101,11 @@ Sollten neue Änderungen für die Anwendungen verfügbar, d.h. der Code auf GitH
 
 aktualisiert werden.
 
+\section{Ersteinrichtung des Backends}
+Nach erstmaliger Installation des Backends muss ein Administrator-Benutzer angelegt sowie die Berechtigung der Schnittstelle für die Blogbeiträge angepasst werden. Dazu muss zuerst \lstinline{https://BACKEND_DOMAIN/admin} aufgerufen, wobei \lstinline{BACKEND_DOMAIN} durch die Domain ersetzt werden muss, mit der das Backend deployed wurde. Auf der Seite kann anschließend ein Administrator-Benutzer angelegt werden.
+
+Danach muss \lstinline{https://BACKEND_DOMAIN/admin/settings/users-permissions/roles} aufgerufen und auf den Reiter \glqq Public\grqq{} geklickt werden. Auf der sich öffnenden Seite muss nun unter dem Reiter \glqq Permissions -> Application\grqq{} ein Haken bei \glqq find\grqq{} und \glqq findone\grqq{} gesetzt werden. So ist die Schnittstelle für die Beiträge öffentlich aufrufbar und benötigt keine Authentifizierung.
+
 \section{Datensicherung und Umzug auf einen anderen Server}
 Sollte der Bedarf für eine vollständige Datensicherung der Anwendungen bestehen oder diese z.B. auf einen anderen \ac{VPS} umgezogen werden sollen, ist dies durch die Verwendung von Docker benutzerfreundlich möglich.
 
