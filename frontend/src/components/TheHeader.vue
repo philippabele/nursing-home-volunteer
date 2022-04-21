@@ -38,7 +38,7 @@ const navItems = ref<INavItem[]>([
       }"
     >
       <div class="container container-fluid">
-        <a class="navbar-brand" href="#">Nursing Home Volunteer</a>
+        <a class="navbar-brand" href="/">Nursing Home Volunteer</a>
 
         <!-- mobile nav toggler -->
         <button
