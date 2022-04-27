@@ -10,19 +10,19 @@ The project was started as part of a computer science student project by [@larsr
 
 The blog is live on: https://seniorenaktivierung.de
 
-## Technologies
-
-The frontend (blog) is created with [Vue.js](https://vuejs.org), [TypeScript](https://www.typescriptlang.org), [Sass](https://sass-lang.com) and [Bootstrap 5](https://getbootstrap.com).
-
-The backend (CMS) is created with the [Strapi headless CMS](https://strapi.io).
-
 ## Documentation
 
 An in-depth documentation of the project can be found in [docs.pdf](./docs.pdf) which is the compiled LaTeX documentation found in `docs` folder.
 
 ## Contribution
 
-replace me with information about how we work and how someone could support this project.
+Thank you for your interest in contributing to our project! Check the [contribution guide](./CONTRIBUTING.md) for how to contribute to this project.
+
+## Technologies
+
+The frontend (blog) is created with [Vue.js](https://vuejs.org), [TypeScript](https://www.typescriptlang.org), [Sass](https://sass-lang.com) and [Bootstrap 5](https://getbootstrap.com).
+
+The backend (CMS) is created with the [Strapi headless CMS](https://strapi.io).
 
 <br>
 
