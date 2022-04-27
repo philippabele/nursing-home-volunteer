@@ -1,3 +1,11 @@
 \chapter{Fazit}
 
-Fazit
+Im Rahmen dieser Studienarbeit soll eine Web-Anwendung und ein \ac{CMS} erstellt werden, um Wissen über Aktivierungen in Pflegeheimen austauschen zu können. Dazu wurde mithilfe von u.a. Vue.js und Bootstrap ein Frontend entwickelt, das neben dem Blog und den Blogbeiträgen zwei statische Seiten zum Darstellen von allgemeinen Informationen über Aktivierungen oder das Projekt besitzt.
+
+Da zum aktuellen Zeitpunkt noch keine konkreten Inhalte feststehen, wurden vorerst Platzhalter-Inhalte eingefügt. So kann möglichen ehrenamtlichen Helfer:innen und Pflegekräften ein frühzeitiger Eindruck des Projekts vermittelt werden.
+
+Die Inhalte für den Blog und die Blogbeiträge wird dynamisch von dem erstellten Backend abgerufen. Dieses wurde mit dem Strapi \ac{CMS} realisiert und bietet eine separate Benutzeroberfläche, um die Inhalte für den Blog zu verwalten. So bietet es den Vorteil, dass Inhalte eingefügt, angepasst und entfernt werden können, ohne die Programmierung des Frontends anpassen zu müssen. Außerdem wird eine Schnittstelle bereitgestellt, die anderen Anwendungen (außerhalb dieser Studienarbeit) den Abruf der Inhalte ermöglicht, um diese z.B. in einem anderen Blog einzubinden und die Inhalte weiter zu verbreiten.
+
+Um die beiden Anwendungen über das Internet zu veröffentlichen, wird ein selbst gehostetes Deployment mit Docker gewählt. Dieses bietet ein gutes Preis-Leistungsverhältnis sowie hohe Verfügbarkeit und Ausfallsicherheit. Zudem ist das Deployment dadurch flexibel und es können ggf. zukünftig weitere Anwendungen gleichermaßen deployed werden. Durch den Einsatz von Docker sind die Anwendungen zusätzlich von dem Server getrennt, was u.a. Sicherheitsvorteile bietet. Außerdem werden die Anwendungen automatisch neu gestartet, sollte es zu einem Ausfall kommen.
+
+Weiterführend empfiehlt sich das Projekt zukünftig weiter zu entwickel, um z.B. neue Funktionen, wie eine Filtermöglichkeit der Blogbeiträge, zu implementieren.
