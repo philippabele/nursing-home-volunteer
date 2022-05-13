@@ -30,6 +30,7 @@ module.exports = {
             template: 100,
             comments: 100,
             tabWidth: 2,
+            ignoreStrings: true,
           },
         ],
         // needed to not mark defineProps, defineEmits etc. as undefined because they are compiler macros

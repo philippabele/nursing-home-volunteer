@@ -14,8 +14,8 @@ import AppLayoutDefault from '../components/layouts/AppLayoutDefault.vue'
 import { IButton, IIconCard, IStep, ITeamMember, ITestimonial } from '../types/components'
 
 const heroBtn: IButton = {
-  href: '/',
-  text: 'Click me',
+  href: '/blog',
+  text: 'Zum Blog',
 }
 
 const iconCards = reactive<IIconCard[]>([
@@ -45,7 +45,7 @@ const iconCards = reactive<IIconCard[]>([
 const testimonials = reactive<ITestimonial[]>([
   {
     id: 0,
-    quote: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod',
+    quote: 'Super Programm, leicht umzusetzen 😊',
     name: 'Max Mustermann',
     avatar: placeholderImgUrl,
     position: 'CEO of Company A',
@@ -90,19 +90,17 @@ const teamMembers = reactive<ITeamMember[]>([
 
 const steps = reactive<IStep[]>([
   {
-    title: 'First step',
-    description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.',
+    title: 'Themenwahl',
+    description: 'Wir wählen das Thema und suchen dazu passende Geschichten.',
   },
   {
-    title: 'Second step',
+    title: 'Inhaltsgestaltung',
     description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.',
+      'Wir überlegen uns bekannte und vertraute Lieder und forschen nach Wörterrätseln sowie Wortfindungen.',
   },
   {
-    title: 'Third step',
-    description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.',
+    title: 'Interaktion',
+    description: 'Gespräche zum Thema aufbauen.',
   },
 ])
 </script>
@@ -112,23 +110,22 @@ const steps = reactive<IStep[]>([
     <main>
       <AppHero
         :src="heroImgUrl"
-        title="Our product or service"
-        subtitle="Lorem ipsum dolor sit amet"
+        title="Seniorenaktivierung"
+        subtitle="Wir wollen aktiv sein"
         :btn="heroBtn"
       />
 
       <section class="py-6 text-center container">
-        <h2>Our Offering</h2>
+        <h2>Unser Angebot</h2>
         <p class="pt-2">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          accusam et justo duo dolores et ea rebum.
+          Tagesstrukturen bieten emotionale und geistige Wärme, Zusammenhalt und Förderung der
+          kognitiven Fähigkeiten.
         </p>
       </section>
 
       <section class="bg-light">
         <div class="py-6 text-center container">
-          <h3>Benefits at a glance</h3>
+          <h3>Alle Vorteile auf einem Blick</h3>
           <p class="pt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
 
           <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -145,7 +142,7 @@ const steps = reactive<IStep[]>([
       </section>
 
       <section class="py-6 text-center container">
-        <h3>Testimonials</h3>
+        <h3>Erfahrungsberichte</h3>
         <p class="pt-2">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
@@ -166,11 +163,8 @@ const steps = reactive<IStep[]>([
 
       <section class="bg-light">
         <div class="py-6 text-center container">
-          <h3>Our Solution or Process</h3>
-          <p class="pt-2">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt
-          </p>
+          <h3>So funktioniert's</h3>
+          <p class="pt-2">Unten sehen Sie, wie unsere Aktivierungsstunden ablaufen.</p>
 
           <div class="mt-5 steps mx-auto">
             <AppSteps :steps="steps" />
@@ -179,8 +173,13 @@ const steps = reactive<IStep[]>([
       </section>
 
       <section class="py-6 text-center container">
-        <h3>Our Team or Partners</h3>
-        <p class="pt-2">Lorem ipsum dolor sit amet, consetetur</p>
+        <h3>Unser Team und Partner</h3>
+        <p class="pt-2">
+          Wir heißen Marianne und Monika, sind staatlich geprüfte Betreuungsassistenten und arbeiten
+          seit 10 Jahren in diesem Beruf. Marianne ist eine federführende Fachkraft. Monika ist
+          mittlerweile Rentnerin und ehrenamtlich tätig. Uns beiden ist es ein Anliegen mit den
+          Bewohnern eine harmonische Aktivierungsstunde durchzuführen.
+        </p>
 
         <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           <div v-for="m of teamMembers" :key="m.id" class="col">

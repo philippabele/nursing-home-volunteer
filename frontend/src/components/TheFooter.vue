@@ -90,7 +90,7 @@ const icons = ref<IIcon[]>([
         </div>
 
         <p>Lorem ipsum dolor sit</p>
-        <p class="text-muted pt-4">© 2017–2021 Company, Inc.</p>
+        <p class="text-muted pt-4">Seniorenaktivierung © 2022</p>
       </div>
     </div>
   </footer>
