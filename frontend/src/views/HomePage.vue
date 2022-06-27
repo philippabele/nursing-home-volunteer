@@ -22,22 +22,24 @@ const iconCards = reactive<IIconCard[]>([
   {
     id: 0,
     icon: bullseyeIconUrl,
-    title: 'Core Value 1',
-    description: 'Lorem ipsum dolor sit amet',
+    title: 'Erfahrung',
+    description:
+      'Jede Aktivierungsstunde wurde bereits in der Praxis erprobt und wird fortlaufend aktualisiert.',
     btn: { text: 'Learn More', href: '/' },
   },
   {
     id: 1,
     icon: chatSquareQuoteIconUrl,
-    title: 'Core Value 2',
-    description: 'Lorem ipsum dolor sit amet',
+    title: 'Struktur',
+    description:
+      'Unsere Vorlagen sind klar strukturiert und sind als Hilfe während einer Aktivierungsstunden ausgelegt.',
     btn: { text: 'Learn More', href: '/' },
   },
   {
     id: 2,
     icon: starFillIconUrl,
-    title: 'Core Value 3',
-    description: 'Lorem ipsum dolor sit amet',
+    title: 'Zeitersparnis',
+    description: 'Durch unsere Vorlagen reduziert sich die Vorbereitungszeit drastisch!',
     btn: { text: 'Learn More', href: '/' },
   },
 ])
