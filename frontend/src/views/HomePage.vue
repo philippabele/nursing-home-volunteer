@@ -175,10 +175,10 @@ const steps = reactive<IStep[]>([
       <section class="py-6 text-center container">
         <h3>Unser Team und Partner</h3>
         <p class="pt-2">
-          Wir heißen Marianne und Monika, sind staatlich geprüfte Betreuungsassistenten und arbeiten
-          seit 10 Jahren in diesem Beruf. Marianne ist eine federführende Fachkraft. Monika ist
-          mittlerweile Rentnerin und ehrenamtlich tätig. Uns beiden ist es ein Anliegen mit den
-          Bewohnern eine harmonische Aktivierungsstunde durchzuführen.
+          Wir heißen Marianne und Monika, sind staatlich geprüfte Betreuungsassistenten und haben
+          über 10 Jahre Berufserfahrung. Marianne ist ein Koordinator in der Betreuung. Monika ist
+          mittlerweile Rentnerin und weiterhin ehrenamtlich tätig. Uns beiden ist es ein Anliegen
+          mit den Bewohnern eine harmonische Aktivierungsstunde durchzuführen.
         </p>
 
         <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
