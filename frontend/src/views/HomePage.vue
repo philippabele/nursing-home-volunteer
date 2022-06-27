@@ -61,7 +61,7 @@ const testimonials = reactive<ITestimonial[]>([
   },
 ])
 
-const teamMembers = reactive<ITeamMember[]>([
+/* const teamMembers = reactive<ITeamMember[]>([
   {
     id: 0,
     avatar: placeholderImgUrl,
@@ -86,7 +86,7 @@ const teamMembers = reactive<ITeamMember[]>([
     name: 'Team Member 3',
     description: 'Lorem ipsum dolor sit',
   },
-])
+]) */
 
 const steps = reactive<IStep[]>([
   {
@@ -181,11 +181,11 @@ const steps = reactive<IStep[]>([
           mit den Bewohnern eine harmonische Aktivierungsstunde durchzuführen.
         </p>
 
-        <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!--         <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           <div v-for="m of teamMembers" :key="m.id" class="col">
             <AppTeamMember :avatar="m.avatar" :name="m.name" :description="m.description" />
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
   </AppLayoutDefault>
