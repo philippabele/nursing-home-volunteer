@@ -22,27 +22,29 @@ const iconCards = reactive<IIconCard[]>([
   {
     id: 0,
     icon: bullseyeIconUrl,
-    title: 'Core Value 1',
-    description: 'Lorem ipsum dolor sit amet',
+    title: 'Erfahrung',
+    description:
+      'Jede Aktivierungsstunde wurde bereits in der Praxis erprobt und wird fortlaufend aktualisiert.',
     btn: { text: 'Learn More', href: '/' },
   },
   {
     id: 1,
     icon: chatSquareQuoteIconUrl,
-    title: 'Core Value 2',
-    description: 'Lorem ipsum dolor sit amet',
+    title: 'Struktur',
+    description:
+      'Unsere Vorlagen sind klar strukturiert und sind als Hilfe während einer Aktivierungsstunde ausgelegt.',
     btn: { text: 'Learn More', href: '/' },
   },
   {
     id: 2,
     icon: starFillIconUrl,
-    title: 'Core Value 3',
-    description: 'Lorem ipsum dolor sit amet',
+    title: 'Zeitersparnis',
+    description: 'Durch unsere Vorlagen reduziert sich die Vorbereitungszeit drastisch!',
     btn: { text: 'Learn More', href: '/' },
   },
 ])
 
-const testimonials = reactive<ITestimonial[]>([
+/* const testimonials = reactive<ITestimonial[]>([
   {
     id: 0,
     quote: 'Super Programm, leicht umzusetzen 😊',
@@ -59,9 +61,9 @@ const testimonials = reactive<ITestimonial[]>([
     position: 'CEO of Company B',
     location: 'Hamburg',
   },
-])
+]) */
 
-const teamMembers = reactive<ITeamMember[]>([
+/* const teamMembers = reactive<ITeamMember[]>([
   {
     id: 0,
     avatar: placeholderImgUrl,
@@ -86,7 +88,7 @@ const teamMembers = reactive<ITeamMember[]>([
     name: 'Team Member 3',
     description: 'Lorem ipsum dolor sit',
   },
-])
+]) */
 
 const steps = reactive<IStep[]>([
   {
@@ -126,29 +128,19 @@ const steps = reactive<IStep[]>([
       <section class="bg-light">
         <div class="py-6 text-center container">
           <h3>Alle Vorteile auf einem Blick</h3>
-          <p class="pt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-
           <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div v-for="card of iconCards" :key="card.id" class="col">
-              <AppIconCard
-                :title="card.title"
-                :icon="card.icon"
-                :description="card.description"
-                :btn="card.btn"
-              />
+              <AppIconCard :title="card.title" :icon="card.icon" :description="card.description" />
             </div>
           </div>
         </div>
       </section>
 
       <section class="py-6 text-center container">
-        <h3>Erfahrungsberichte</h3>
-        <p class="pt-2">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
+        <h3>Unser Motto</h3>
+        <p class="pt-2">Wer den Tag mit Lachen beginnt, hat ihn bereits gewonnen.</p>
 
-        <div class="mt-5 row row-cols-1 row-cols-md-2 g-4">
+        <!--         <div class="mt-5 row row-cols-1 row-cols-md-2 g-4">
           <div v-for="t of testimonials" :key="t.id" class="col">
             <AppTestimonial
               :quote="t.quote"
@@ -158,7 +150,7 @@ const steps = reactive<IStep[]>([
               :location="t.location"
             />
           </div>
-        </div>
+        </div> -->
       </section>
 
       <section class="bg-light">
@@ -173,19 +165,19 @@ const steps = reactive<IStep[]>([
       </section>
 
       <section class="py-6 text-center container">
-        <h3>Unser Team und Partner</h3>
+        <h3>Unser Team</h3>
         <p class="pt-2">
-          Wir heißen Marianne und Monika, sind staatlich geprüfte Betreuungsassistenten und arbeiten
-          seit 10 Jahren in diesem Beruf. Marianne ist eine federführende Fachkraft. Monika ist
-          mittlerweile Rentnerin und ehrenamtlich tätig. Uns beiden ist es ein Anliegen mit den
-          Bewohnern eine harmonische Aktivierungsstunde durchzuführen.
+          Wir heißen Marianne und Monika, sind staatlich geprüfte Betreuungsassistenten und haben
+          über 10 Jahre Berufserfahrung. Marianne ist ein Koordinator in der Betreuung. Monika ist
+          mittlerweile Rentnerin und weiterhin ehrenamtlich tätig. Uns beiden ist es ein Anliegen
+          mit den Bewohnern eine harmonische Aktivierungsstunde durchzuführen.
         </p>
 
-        <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!--         <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           <div v-for="m of teamMembers" :key="m.id" class="col">
             <AppTeamMember :avatar="m.avatar" :name="m.name" :description="m.description" />
           </div>
-        </div>
+        </div> -->
       </section>
     </main>
   </AppLayoutDefault>

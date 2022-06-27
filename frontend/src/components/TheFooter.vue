@@ -15,10 +15,6 @@ const navItems = ref<INavItem[]>([
     title: 'Startseite',
     href: '/',
   },
-  {
-    title: 'Landing page',
-    href: '/landing-page',
-  },
 ])
 
 const icons = ref<IIcon[]>([

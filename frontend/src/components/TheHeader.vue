@@ -18,10 +18,6 @@ const navItems = ref<INavItem[]>([
     href: '/',
   },
   {
-    title: 'Landing page',
-    href: '/landing-page',
-  },
-  {
     title: 'Blog',
     href: '/blog',
   },
