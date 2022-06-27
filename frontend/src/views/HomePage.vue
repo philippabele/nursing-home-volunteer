@@ -42,7 +42,7 @@ const iconCards = reactive<IIconCard[]>([
   },
 ])
 
-const testimonials = reactive<ITestimonial[]>([
+/* const testimonials = reactive<ITestimonial[]>([
   {
     id: 0,
     quote: 'Super Programm, leicht umzusetzen 😊',
@@ -59,7 +59,7 @@ const testimonials = reactive<ITestimonial[]>([
     position: 'CEO of Company B',
     location: 'Hamburg',
   },
-])
+]) */
 
 /* const teamMembers = reactive<ITeamMember[]>([
   {
@@ -142,13 +142,10 @@ const steps = reactive<IStep[]>([
       </section>
 
       <section class="py-6 text-center container">
-        <h3>Erfahrungsberichte</h3>
-        <p class="pt-2">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-        </p>
+        <h3>Unser Motto</h3>
+        <p class="pt-2">Wer den Tag mit Lachen beginnt, hat ihn bereits gewonnen</p>
 
-        <div class="mt-5 row row-cols-1 row-cols-md-2 g-4">
+        <!--         <div class="mt-5 row row-cols-1 row-cols-md-2 g-4">
           <div v-for="t of testimonials" :key="t.id" class="col">
             <AppTestimonial
               :quote="t.quote"
@@ -158,7 +155,7 @@ const steps = reactive<IStep[]>([
               :location="t.location"
             />
           </div>
-        </div>
+        </div> -->
       </section>
 
       <section class="bg-light">
