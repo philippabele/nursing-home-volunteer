@@ -32,7 +32,7 @@ const iconCards = reactive<IIconCard[]>([
     icon: chatSquareQuoteIconUrl,
     title: 'Struktur',
     description:
-      'Unsere Vorlagen sind klar strukturiert und sind als Hilfe während einer Aktivierungsstunden ausgelegt.',
+      'Unsere Vorlagen sind klar strukturiert und sind als Hilfe während einer Aktivierungsstunde ausgelegt.',
     btn: { text: 'Learn More', href: '/' },
   },
   {
@@ -128,16 +128,9 @@ const steps = reactive<IStep[]>([
       <section class="bg-light">
         <div class="py-6 text-center container">
           <h3>Alle Vorteile auf einem Blick</h3>
-          <p class="pt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-
           <div class="mt-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div v-for="card of iconCards" :key="card.id" class="col">
-              <AppIconCard
-                :title="card.title"
-                :icon="card.icon"
-                :description="card.description"
-                :btn="card.btn"
-              />
+              <AppIconCard :title="card.title" :icon="card.icon" :description="card.description" />
             </div>
           </div>
         </div>
@@ -145,7 +138,7 @@ const steps = reactive<IStep[]>([
 
       <section class="py-6 text-center container">
         <h3>Unser Motto</h3>
-        <p class="pt-2">Wer den Tag mit Lachen beginnt, hat ihn bereits gewonnen</p>
+        <p class="pt-2">Wer den Tag mit Lachen beginnt, hat ihn bereits gewonnen.</p>
 
         <!--         <div class="mt-5 row row-cols-1 row-cols-md-2 g-4">
           <div v-for="t of testimonials" :key="t.id" class="col">
@@ -172,7 +165,7 @@ const steps = reactive<IStep[]>([
       </section>
 
       <section class="py-6 text-center container">
-        <h3>Unser Team und Partner</h3>
+        <h3>Unser Team</h3>
         <p class="pt-2">
           Wir heißen Marianne und Monika, sind staatlich geprüfte Betreuungsassistenten und haben
           über 10 Jahre Berufserfahrung. Marianne ist ein Koordinator in der Betreuung. Monika ist
